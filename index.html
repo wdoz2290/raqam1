@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>RAQAM — Eksklyuziv Telefon Raqamlari | Элитные Номера</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":            "#0f172a",
+            "primary-container":  "#1e293b",
+            "accent":             "#2563eb",
+            "accent-light":       "#3b82f6",
+            "accent-dim":         "#93c5fd",
+            "surface":            "#ffffff",
+            "surface-low":        "#f8faff",
+            "surface-mid":        "#eff6ff",
+            "surface-high":       "#dbeafe",
+            "on-surface":         "#0f172a",
+            "on-surface-muted":   "#334155",
+            "on-surface-subtle":  "#64748b",
+            "border-soft":        "#bfdbfe",
+            "border-mid":         "#93c5fd",
+            "error":              "#dc2626",
+            "success":            "#16a34a"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body":     ["Plus Jakarta Sans", "sans-serif"]
+          },
+          boxShadow: {
+            "navy":  "0 20px 45px -10px rgba(15,23,42,0.18)",
+            "blue":  "0 0 25px rgba(37,99,235,0.25)",
+            "phone": "0 25px 60px -15px rgba(15,23,42,0.55)",
+            "card":  "0 4px 20px -4px rgba(15,23,42,0.08)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @layer base {
+      html, body { width:100%; margin:0; padding:0; background-color:#ffffff; color:#0f172a; }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+    }
+    ::-webkit-scrollbar { width:6px; height:6px; }
+    ::-webkit-scrollbar-track { background:#eff6ff; }
+    ::-webkit-scrollbar-thumb { background:#93c5fd; border-radius:9999px; }
+    ::-webkit-scrollbar-thumb:hover { background:#2563eb; }
+    .tabular-numbers { font-variant-numeric: tabular-nums; }
+    .perspective-1000 { perspective: 1000px; }
+    @keyframes pulseDot { 0%,100%{opacity:.7;transform:scale(1)} 50%{opacity:1;transform:scale(1.15)} }
+    .animate-dot-pulse { animation: pulseDot 2.5s infinite ease-in-out; }
+    @keyframes ripple { 0%{transform:scale(.8);opacity:1} 100%{transform:scale(2.2);opacity:0} }
+    .call-ripple { animation: ripple 1.6s infinite ease-out; }
+    .lang-btn { transition: all 0.2s; }
+    .lang-btn.active { background-color:#0f172a; color:#ffffff; }
+    .operator-pill.active { background-color:#0f172a !important; color:#ffffff !important; font-weight:700; }
+    .price-pill.active, .category-pill.active { background-color:#dbeafe !important; color:#1e40af !important; font-weight:700; }
+    .number-card:hover { box-shadow: 0 8px 30px -6px rgba(37,99,235,0.18); border-color:#93c5fd; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+</head>
+<body class="font-body text-on-surface bg-surface min-h-screen flex flex-col antialiased">
+
+<!-- ========== HEADER ========== -->
+<header class="fixed top-0 w-full z-40 bg-white/97 backdrop-blur-xl border-b border-border-soft shadow-[0_2px_16px_rgba(15,23,42,0.07)]">
+  <div class="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between gap-3">
+    <a href="#" class="flex items-center gap-3 group shrink-0">
+      <img src="assets/logo.svg" alt="RAQAM" class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"/>
+      <div class="hidden sm:flex flex-col leading-tight">
+        <span class="font-headline text-[13px] tracking-[0.22em] text-primary uppercase font-bold">RAQAM</span>
+        <span class="text-[9px] text-on-surface-subtle tracking-widest uppercase">Luxury Phone Boutique</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-5 text-[12px] font-semibold tracking-wider uppercase text-on-surface-muted">
+      <a href="#hero"        class="hover:text-accent transition-colors" data-uz="Asosiy"      data-ru="Главная">Asosiy</a>
+      <a href="#katalog"     class="hover:text-accent transition-colors" data-uz="Katalog"     data-ru="Каталог">Katalog</a>
+      <a href="#afzalliklar" class="hover:text-accent transition-colors" data-uz="Afzalliklar" data-ru="Преимущества">Afzalliklar</a>
+      <a href="#savollar"    class="hover:text-accent transition-colors" data-uz="FAQ"         data-ru="FAQ">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-1.5">
+      <div class="flex items-center bg-surface-mid border border-border-soft rounded-full p-0.5 text-[11px] font-bold tracking-wider mr-1">
+        <button id="btnLangUz" onclick="setLang('uz')" class="lang-btn active px-3 py-1 rounded-full uppercase">UZ</button>
+        <button id="btnLangRu" onclick="setLang('ru')" class="lang-btn px-3 py-1 rounded-full uppercase text-on-surface-subtle">RU</button>
+      </div>
+      <button onclick="scrollToSearch()" aria-label="Search" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-muted hover:bg-surface-mid hover:text-accent transition-colors">
+        <span class="material-symbols-outlined text-[20px]">search</span>
+      </button>
+      <button onclick="openWishlistModal()" aria-label="Wishlist" class="relative w-9 h-9 rounded-full flex items-center justify-center text-on-surface-muted hover:bg-surface-mid hover:text-accent transition-colors">
+        <span class="material-symbols-outlined text-[20px]">favorite</span>
+        <span id="favCountBadge" class="absolute top-1 right-1 min-w-[15px] h-[15px] px-0.5 bg-accent text-white font-bold text-[9px] rounded-full flex items-center justify-center">0</span>
+      </button>
+      <a href="https://t.me/raqamlaruz1bot" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent transition-all shadow-sm">
+        <span class="material-symbols-outlined text-[15px]">support_agent</span>
+        <span data-uz="Konsyerj" data-ru="Консьерж">Konsyerj</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-grow pt-16">
+
+<!-- ========== HERO ========== -->
+<section id="hero" class="relative w-full bg-primary text-white px-4 sm:px-6 pt-10 pb-16 overflow-hidden">
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-24 w-80 h-80 rounded-full bg-accent-light/15 blur-3xl pointer-events-none"></div>
+  <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
+    <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+      <span class="w-2 h-2 rounded-full bg-accent-dim animate-dot-pulse"></span>
+      <span class="font-headline text-[11px] tracking-[0.25em] text-accent-dim uppercase" data-uz="Toshkent • Mayfair Standarti" data-ru="Ташкент • Стандарт Мэйфэр">Toshkent • Mayfair Standarti</span>
+    </div>
+    <h1 class="font-headline text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.15] mb-4">
+      <span data-uz="SIZDAN OLDIN" data-ru="ПРЕЖДЕ ВАС —">SIZDAN OLDIN</span><br/>
+      <span class="italic font-normal text-accent-dim" data-uz="RAQAMINGIZ SO'ZLASIN." data-ru="ПУСТЬ ГОВОРИТ ВАШ НОМЕР.">RAQAMINGIZ SO'ZLASIN.</span>
+    </h1>
+    <p class="text-[13px] sm:text-[16px] text-white/75 max-w-lg mx-auto leading-relaxed mb-8"
+       data-uz="Har bir raqam — o'z egasining mavqei, nufuzi va estetik didining ko'zgusi. O'zbekiston bo'ylab eng noyob oltin va VIP raqamlar kolleksiyasi."
+       data-ru="Каждый номер — отражение статуса, авторитета и вкуса своего владельца. Коллекция самых редких VIP-номеров по всему Узбекистану.">
+      Har bir raqam — o'z egasining mavqei, nufuzi va estetik didining ko'zgusi. O'zbekiston bo'ylab eng noyob oltin va VIP raqamlar kolleksiyasi.
+    </p>
+
+    <!-- PHONE SIMULATOR -->
+    <div class="w-full max-w-[300px] sm:max-w-[330px] mx-auto perspective-1000 mb-8">
+      <div class="relative rounded-[36px] p-[3px] bg-gradient-to-b from-accent-dim/60 via-accent/40 to-accent-dim/20 shadow-phone transition-transform duration-500 hover:scale-[1.02]">
+        <div class="relative bg-[#070f1f] rounded-[33px] pt-3.5 pb-6 px-4 overflow-hidden text-center min-h-[390px] flex flex-col justify-between border border-white/10">
+          <div class="absolute -top-20 -left-16 w-60 h-72 bg-gradient-to-br from-white/8 to-transparent rotate-12 pointer-events-none rounded-full blur-[2px]"></div>
+          <div class="relative z-10 flex items-center justify-between px-2 pt-1 pb-2 text-white/80">
+            <span class="text-[11px] font-semibold tracking-wider font-mono">09:41</span>
+            <div class="w-20 h-4 bg-black rounded-full flex items-center justify-center gap-1 border border-white/10">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-dim animate-pulse"></span>
+              <span class="text-[8px] text-accent-dim font-mono font-bold tracking-widest">VIP</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[12px]">signal_cellular_4_bar</span>
+              <span class="material-symbols-outlined text-[12px]">wifi</span>
+              <span class="material-symbols-outlined text-[12px]">battery_charging_full</span>
+            </div>
+          </div>
+          <div class="relative z-10 mt-1">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 border border-accent/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-dim animate-ping"></span>
+              <span id="activeOperatorBadge" class="text-[9px] uppercase tracking-widest text-accent-dim font-bold">BEELINE VIP CONCIERGE</span>
+            </span>
+          </div>
+          <div class="relative z-10 py-4 my-auto">
+            <p id="callStatusLabel" class="text-[10px] uppercase tracking-widest text-white/50 font-semibold mb-1" data-uz="Kiruvchi qo'ng'iroq..." data-ru="Входящий звонок...">Kiruvchi qo'ng'iroq...</p>
+            <div class="min-h-[48px] flex items-center justify-center">
+              <span id="liveTypingNumber" class="text-2xl sm:text-[26px] font-bold tracking-wider text-accent-dim font-headline tabular-numbers">+998 90 777 77 77</span>
+              <span class="w-[2px] h-6 bg-accent-dim animate-pulse ml-1 inline-block"></span>
+            </div>
+            <div class="flex items-center justify-center gap-1.5 mt-1 text-[11px] text-accent-dim/90">
+              <span class="material-symbols-outlined text-[14px]">verified</span>
+              <span data-uz="Davlat Reestridan Tasdiqlangan" data-ru="Подтверждён гос. реестром">Davlat Reestridan Tasdiqlangan</span>
+            </div>
+            <div id="callDurationContainer" class="hidden mt-2 inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-accent/20 text-accent-dim text-[11px] font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span id="callDurationTimer">00:00</span>
+            </div>
+          </div>
+          <div class="relative z-10 flex items-center justify-center gap-6 pt-2">
+            <button onclick="handlePhoneDecline()" class="w-12 h-12 rounded-full bg-red-600/90 hover:bg-red-500 flex items-center justify-center text-white shadow-lg transition-transform active:scale-95">
+              <span class="material-symbols-outlined text-[20px]">call_end</span>
+            </button>
+            <button onclick="handlePhoneInspect()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-accent-dim shadow transition-transform active:scale-95">
+              <span class="material-symbols-outlined text-[20px]">dialpad</span>
+            </button>
+            <button onclick="handlePhoneAnswer()" class="relative w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center text-white shadow-lg transition-transform active:scale-95">
+              <span class="absolute inset-0 rounded-full bg-emerald-500/40 call-ripple pointer-events-none"></span>
+              <span class="material-symbols-outlined text-[22px]">call</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm">
+      <a href="#katalog" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-full bg-accent text-white font-bold text-[12px] tracking-widest uppercase hover:bg-accent-light transition-all shadow-lg flex items-center justify-center gap-2 group">
+        <span data-uz="Raqamni Tanlash" data-ru="Выбрать Номер">Raqamni Tanlash</span>
+        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+      <button onclick="openDirectOrderModal('+998 90 777 77 77', '2 500 000 so\'m', 'Beeline VIP')" class="w-full sm:w-auto py-3.5 px-6 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-[12px] tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 border border-white/20">
+        <span class="material-symbols-outlined text-[16px] text-accent-dim">bolt</span>
+        <span data-uz="Tezkor Buyurtma" data-ru="Быстрый Заказ">Tezkor Buyurtma</span>
+      </button>
+    </div>
+    <p class="text-[11px] tracking-widest text-white/40 uppercase mt-5" data-uz="✦ 15 daqiqada rasmiy notarial rasmiylashtirish va bepul yetkazish ✦" data-ru="✦ Нотариальное оформление за 15 минут и бесплатная доставка ✦">
+      ✦ 15 daqiqada rasmiy notarial rasmiylashtirish va bepul yetkazish ✦
+    </p>
+  </div>
+</section>
+
+<!-- ========== SEARCH & FILTER ========== -->
+<section id="katalog" class="px-4 sm:px-6 py-8 bg-surface-low border-b border-border-soft">
+  <div class="max-w-5xl mx-auto">
+    <div class="relative w-full mb-5">
+      <div class="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-accent">
+        <span class="material-symbols-outlined text-[22px]">search</span>
+      </div>
+      <input id="numberSearchInput" type="text"
+        placeholder="Raqam qidirish... / Поиск номера... (777, 555, 007)"
+        class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white border border-border-soft text-on-surface font-medium text-[14px] placeholder:text-on-surface-subtle shadow-card focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"/>
+      <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-3.5 flex items-center text-on-surface-subtle hover:text-on-surface">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-3">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-subtle shrink-0 mr-1" data-uz="Operator:" data-ru="Оператор:">Operator:</span>
+      <button onclick="setOperatorFilter('all',this)" class="operator-pill active px-4 py-1.5 rounded-full border border-primary bg-primary text-white text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap" data-uz="Barchasi" data-ru="Все">Barchasi</button>
+      <button onclick="setOperatorFilter('Beeline',this)" class="operator-pill px-4 py-1.5 rounded-full bg-white border border-border-soft text-on-surface-muted text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap hover:border-accent transition-all">Beeline (90/91)</button>
+      <button onclick="setOperatorFilter('Ucell',this)" class="operator-pill px-4 py-1.5 rounded-full bg-white border border-border-soft text-on-surface-muted text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap hover:border-accent transition-all">Ucell (93/94)</button>
+      <button onclick="setOperatorFilter('Mobiuz',this)" class="operator-pill px-4 py-1.5 rounded-full bg-white border border-border-soft text-on-surface-muted text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap hover:border-accent transition-all">Mobiuz (97/88)</button>
+      <button onclick="setOperatorFilter('Uztelecom',this)" class="operator-pill px-4 py-1.5 rounded-full bg-white border border-border-soft text-on-surface-muted text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap hover:border-accent transition-all">Uztelecom (99/95)</button>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-border-soft">
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle shrink-0 mr-1" data-uz="Narx:" data-ru="Цена:">Narx:</span>
+        <button onclick="setPriceFilter('all',this)" class="price-pill active px-3 py-1 rounded-lg border border-border-soft bg-surface-high text-primary font-semibold text-[10px] uppercase" data-uz="Barchasi" data-ru="Все">Barchasi</button>
+        <button onclick="setPriceFilter('1500000',this)" class="price-pill px-3 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent">≤ 1.5M so'm</button>
+        <button onclick="setPriceFilter('2500000',this)" class="price-pill px-3 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent">≤ 2.5M so'm</button>
+        <button onclick="setPriceFilter('4000000',this)" class="price-pill px-3 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent">≤ 4.0M so'm</button>
+      </div>
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mr-1" data-uz="Toifa:" data-ru="Класс:">Toifa:</span>
+        <button onclick="setCategoryFilter('all',this)" class="category-pill active px-2.5 py-1 rounded-lg border border-border-soft bg-surface-high text-primary font-semibold text-[10px] uppercase" data-uz="Barchasi" data-ru="Все">Barchasi</button>
+        <button onclick="setCategoryFilter('VIP',this)" class="category-pill px-2.5 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent">VIP</button>
+        <button onclick="setCategoryFilter('Premium',this)" class="category-pill px-2.5 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent">Premium</button>
+        <button onclick="setCategoryFilter('Maxsus',this)" class="category-pill px-2.5 py-1 rounded-lg border border-border-soft bg-white text-on-surface-muted font-semibold text-[10px] uppercase hover:border-accent" data-uz="Maxsus" data-ru="Особые">Maxsus</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATEGORIES ========== -->
+<section id="toifalar" class="px-4 sm:px-6 py-10 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-7">
+      <span class="text-[11px] font-bold text-accent uppercase tracking-[0.25em]" data-uz="Saralangan Fond" data-ru="Отборный Фонд">Saralangan Fond</span>
+      <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium mt-1" data-uz="3 Ta Maxsus Toifa" data-ru="3 Эксклюзивных Класса">3 Ta Maxsus Toifa</h2>
+      <div class="w-10 h-[2px] bg-accent mx-auto mt-2 rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div onclick="filterByCategoryCard('Premium')" class="group cursor-pointer p-5 rounded-2xl bg-surface-low border border-border-soft shadow-card hover:shadow-navy hover:border-accent transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-1.5 text-accent">
+              <span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+              <span class="text-[11px] uppercase tracking-widest font-bold">PREMIUM</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-surface-high text-primary text-[10px] font-semibold" data-uz="42 raqam" data-ru="42 номера">42 raqam</span>
+          </div>
+          <h3 class="font-headline text-lg text-primary font-semibold" data-uz="Tanlangan Chiroyli Raqamlar" data-ru="Красивые Избранные Номера">Tanlangan Chiroyli Raqamlar</h3>
+          <p class="text-[13px] text-on-surface-muted mt-2 leading-relaxed" data-uz="Biznes egalari va jamoat vakillari uchun qulay, oson esda qoluvchi oyna va ketma-ket kombinatsiyalar." data-ru="Удобные симметричные и последовательные комбинации для предпринимателей и публичных персон.">Biznes egalari va jamoat vakillari uchun qulay, oson esda qoluvchi oyna va ketma-ket kombinatsiyalar.</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-border-soft flex items-center justify-between text-accent">
+          <span class="font-headline text-[15px] text-primary font-bold">+998 90 123 45 67</span>
+          <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </div>
+      </div>
+      <div onclick="filterByCategoryCard('VIP')" class="group cursor-pointer p-5 rounded-2xl bg-primary border border-primary shadow-navy hover:bg-primary-container transition-all flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-28 h-28 bg-accent/20 rounded-full blur-xl pointer-events-none"></div>
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-1.5 text-accent-dim">
+              <span class="material-symbols-outlined text-[18px]">military_tech</span>
+              <span class="text-[11px] uppercase tracking-widest font-bold">VIP ARCHIVE</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-accent/20 text-accent-dim text-[10px] font-bold" data-uz="Oltin Fond" data-ru="Золотой Фонд">Oltin Fond</span>
+          </div>
+          <h3 class="font-headline text-lg text-white font-semibold" data-uz="Eng Noyob Va Monolit Seriyalar" data-ru="Самые Редкие Монолитные Серии">Eng Noyob Va Monolit Seriyalar</h3>
+          <p class="text-[13px] text-white/70 mt-2 leading-relaxed" data-uz="777, 555, 111 va to'liq monolit yetti raqamli seriyalar. Yuqori martabali davlat va biznes elitalari uchun." data-ru="Серии 777, 555, 111 — полностью монолитные. Для государственных деятелей и деловой элиты.">777, 555, 111 va to'liq monolit yetti raqamli seriyalar.</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/20 flex items-center justify-between text-accent-dim">
+          <span class="font-headline text-[15px] text-white font-bold">+998 90 777 77 77</span>
+          <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </div>
+      </div>
+      <div onclick="filterByCategoryCard('Maxsus')" class="group cursor-pointer p-5 rounded-2xl bg-surface-low border border-border-soft shadow-card hover:shadow-navy hover:border-accent transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-1.5 text-accent">
+              <span class="material-symbols-outlined text-[18px]">diamond</span>
+              <span class="text-[11px] uppercase tracking-widest font-bold" data-uz="MAXSUS SERIYA" data-ru="ОСОБАЯ СЕРИЯ">MAXSUS SERIYA</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-surface-high text-primary text-[10px] font-semibold">Bespoke</span>
+          </div>
+          <h3 class="font-headline text-lg text-primary font-semibold" data-uz="Tug'ilgan Yil &amp; Simmetriya" data-ru="Год Рождения &amp; Симметрия">Tug'ilgan Yil &amp; Simmetriya</h3>
+          <p class="text-[13px] text-on-surface-muted mt-2 leading-relaxed" data-uz="Avtomobil davlat raqamingiz (007, 700) yoki tug'ilgan yilingiz bilan mukammal mos keluvchi tandemlar." data-ru="Идеально сочетаются с госномером авто (007, 700) или годом рождения.">Avtomobil davlat raqamingiz (007, 700) yoki tug'ilgan yilingiz bilan mukammal mos keluvchi tandemlar.</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-border-soft flex items-center justify-between text-accent">
+          <span class="font-headline text-[15px] text-primary font-bold">+998 90 700 00 07</span>
+          <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INVENTORY ========== -->
+<section class="px-4 sm:px-6 py-10 bg-surface-low">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+      <div>
+        <span class="text-[11px] font-bold text-accent uppercase tracking-[0.2em]" data-uz="Eksklyuziv Lotlar" data-ru="Эксклюзивные Лоты">Eksklyuziv Lotlar</span>
+        <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium" data-uz="Bugunning Saralanganlari" data-ru="Лучшие Предложения Сегодня">Bugunning Saralanganlari</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="resultsCount" class="text-[12px] font-semibold text-on-surface-muted"></span>
+        <button onclick="resetAllFilters()" class="text-[11px] text-accent hover:underline font-bold uppercase tracking-wider" data-uz="Barchasini ko'rsatish" data-ru="Показать все">Barchasini ko'rsatish</button>
+      </div>
+    </div>
+    <div id="numbersGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    <div id="noResultsState" class="hidden py-16 text-center flex-col items-center justify-center bg-white rounded-2xl p-6 border border-dashed border-border-mid">
+      <span class="material-symbols-outlined text-[48px] text-accent mb-3">search_off</span>
+      <h3 class="font-headline text-xl text-primary font-semibold" data-uz="Kechirasiz, mos raqam topilmadi" data-ru="Извините, номер не найден">Kechirasiz, mos raqam topilmadi</h3>
+      <p class="text-[13px] text-on-surface-muted max-w-sm mt-1 mb-4" data-uz="Siz izlagan kombinatsiya hozirda shaxsiy yopiq rezervda bo'lishi mumkin." data-ru="Нужная комбинация может быть в закрытом резерве. Обратитесь к консьержу.">Siz izlagan kombinatsiya hozirda shaxsiy yopiq rezervda bo'lishi mumkin.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button onclick="resetAllFilters()" class="px-5 py-2.5 rounded-full bg-primary text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent transition-colors" data-uz="Barcha raqamlarni ko'rish" data-ru="Показать все номера">Barcha raqamlarni ko'rish</button>
+        <a href="https://t.me/raqamlaruz1bot" target="_blank" class="px-5 py-2.5 rounded-full bg-accent text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent-light" data-uz="Konsyerjdan so'rash" data-ru="Спросить консьержа">Konsyerjdan so'rash</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section id="afzalliklar" class="px-4 sm:px-6 py-12 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-[11px] font-bold text-accent uppercase tracking-[0.25em]" data-uz="Bizning Kafolatlarimiz" data-ru="Наши Гарантии">Bizning Kafolatlarimiz</span>
+      <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium mt-1" data-uz="Nega Aynan Biz?" data-ru="Почему Именно Мы?">Nega Aynan Biz?</h2>
+      <div class="w-10 h-[2px] bg-accent mx-auto mt-2 rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="p-6 rounded-2xl bg-surface-low border border-border-soft shadow-card hover:shadow-navy transition-all flex flex-col">
+        <div class="w-10 h-10 rounded-xl bg-surface-high flex items-center justify-center mb-4"><span class="material-symbols-outlined text-accent text-[22px]">workspace_premium</span></div>
+        <h3 class="font-headline text-lg font-semibold text-primary mb-2" data-uz="PREMIUM RAQAMLAR" data-ru="ПРЕМИУМ НОМЕРА">PREMIUM RAQAMLAR</h3>
+        <p class="text-[13px] text-on-surface-muted leading-relaxed" data-uz="Faqat saralangan, qonuniy toza va eksklyuziv kombinatsiyalar. Har bir raqam telekommunikatsiya qonunchiligi asosida qat'iy tekshirilgan." data-ru="Только отборные, юридически чистые и эксклюзивные комбинации. Каждый номер строго проверен по законодательству о телекоммуникациях.">Faqat saralangan, qonuniy toza va eksklyuziv kombinatsiyalar. Har bir raqam qat'iy tekshirilgan.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-surface-low border border-border-soft shadow-card hover:shadow-navy transition-all flex flex-col">
+        <div class="w-10 h-10 rounded-xl bg-surface-high flex items-center justify-center mb-4"><span class="material-symbols-outlined text-accent text-[22px]">verified_user</span></div>
+        <h3 class="font-headline text-lg font-semibold text-primary mb-2" data-uz="ISHONCHLI XIZMAT" data-ru="НАДЁЖНЫЙ СЕРВИС">ISHONCHLI XIZMAT</h3>
+        <p class="text-[13px] text-on-surface-muted leading-relaxed" data-uz="Rasmiy notarial kafolat va operatorlarning markaziy bosh ofislarida 100% sizning nomingizga to'liq qonuniy qayta rasmiylashtirish." data-ru="Официальное нотариальное поручительство и полное юридическое переоформление на ваше имя в офисах операторов.">Rasmiy notarial kafolat va operatorlar bosh ofislarida 100% sizning nomingizga to'liq qonuniy qayta rasmiylashtirish.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-surface-low border border-border-soft shadow-card hover:shadow-navy transition-all flex flex-col">
+        <div class="w-10 h-10 rounded-xl bg-surface-high flex items-center justify-center mb-4"><span class="material-symbols-outlined text-accent text-[22px]">speed</span></div>
+        <h3 class="font-headline text-lg font-semibold text-primary mb-2" data-uz="TEZKOR RASMIYLASHTIRISH" data-ru="БЫСТРОЕ ОФОРМЛЕНИЕ">TEZKOR RASMIYLASHTIRISH</h3>
+        <p class="text-[13px] text-on-surface-muted leading-relaxed" data-uz="Atigi 15 daqiqada yangi sim-karta yoki masofaviy eSIM orqali to'liq nomingizga rasmiylashtirib berish va Toshkent bo'ylab tezkor yetkazish." data-ru="Всего за 15 минут оформление на eSIM или SIM и срочная доставка по Ташкенту.">Atigi 15 daqiqada eSIM yoki SIM orqali nomingizga rasmiylashtirib berish va tezkor yetkazish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="px-4 sm:px-6 py-12 bg-surface-low">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-[11px] font-bold text-accent uppercase tracking-[0.25em]" data-uz="Oddiy va Shaffof" data-ru="Просто и Прозрачно">Oddiy va Shaffof</span>
+      <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium mt-1" data-uz="Qanday Ishlaydi?" data-ru="Как Это Работает?">Qanday Ishlaydi?</h2>
+      <div class="w-10 h-[2px] bg-accent mx-auto mt-2 rounded-full"></div>
+    </div>
+    <div class="relative flex flex-col gap-6 pl-4 sm:pl-8">
+      <div class="absolute top-6 bottom-6 left-[27px] sm:left-[43px] w-[2px] bg-border-mid pointer-events-none rounded-full"></div>
+      <div class="relative flex items-start gap-4 z-10">
+        <div class="w-8 h-8 rounded-full bg-accent text-white font-bold text-[13px] flex items-center justify-center shrink-0 shadow-blue">1</div>
+        <div class="bg-white p-4 rounded-xl shadow-card border border-border-soft flex-grow">
+          <h3 class="font-headline text-base font-semibold text-primary" data-uz="Raqamni Tanlang" data-ru="Выберите Номер">Raqamni Tanlang</h3>
+          <p class="text-[13px] text-on-surface-muted mt-1 leading-relaxed" data-uz="Eksklyuziv katalogimizdan o'zingizga, kompaniyangizga yoki avtomobilingizga ma'qul raqamni toping." data-ru="Найдите в каталоге номер, подходящий вам, вашей компании или авто.">Eksklyuziv katalogimizdan o'zingizga, kompaniyangizga yoki avtomobilingizga ma'qul raqamni toping.</p>
+        </div>
+      </div>
+      <div class="relative flex items-start gap-4 z-10">
+        <div class="w-8 h-8 rounded-full bg-accent text-white font-bold text-[13px] flex items-center justify-center shrink-0 shadow-blue">2</div>
+        <div class="bg-white p-4 rounded-xl shadow-card border border-border-soft flex-grow">
+          <h3 class="font-headline text-base font-semibold text-primary" data-uz="Buyurtma Bering" data-ru="Оформите Заказ">Buyurtma Bering</h3>
+          <p class="text-[13px] text-on-surface-muted mt-1 leading-relaxed" data-uz="Birgina tugma orqali onlayn so'rov yuboring. Buyurtmangiz to'g'ridan-to'g'ri Telegram tizimimizga kelib tushadi." data-ru="Одним нажатием отправьте заявку. Заказ поступает напрямую в нашу Telegram-систему.">Birgina tugma orqali onlayn so'rov yuboring. Buyurtmangiz to'g'ridan-to'g'ri Telegram tizimimizga kelib tushadi.</p>
+        </div>
+      </div>
+      <div class="relative flex items-start gap-4 z-10">
+        <div class="w-8 h-8 rounded-full bg-accent text-white font-bold text-[13px] flex items-center justify-center shrink-0 shadow-blue">3</div>
+        <div class="bg-white p-4 rounded-xl shadow-card border border-border-soft flex-grow">
+          <h3 class="font-headline text-base font-semibold text-primary" data-uz="Raqamingizni Qabul Qiling" data-ru="Получите Ваш Номер">Raqamingizni Qabul Qiling</h3>
+          <p class="text-[13px] text-on-surface-muted mt-1 leading-relaxed" data-uz="eSIM formatida bir zumda QR-kod orqali aktivlashtiring yoki maxsus qadoqdagi fizik kartani kuryer orqali qabul qiling." data-ru="Активируйте через QR-код (eSIM) или получите физическую SIM в фирменной упаковке через курьера.">eSIM formatida bir zumda QR-kod orqali aktivlashtiring yoki fizik kartani kuryer orqali qabul qiling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS ========== -->
+<section class="px-4 sm:px-6 py-12 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-[11px] font-bold text-accent uppercase tracking-[0.25em]" data-uz="Mijozlarimiz Bahosi" data-ru="Отзывы Клиентов">Mijozlarimiz Bahosi</span>
+      <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium mt-1" data-uz="Mijozlarimiz Nima Deydi?" data-ru="Что Говорят Наши Клиенты?">Mijozlarimiz Nima Deydi?</h2>
+      <div class="w-10 h-[2px] bg-accent mx-auto mt-2 rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-5 rounded-2xl bg-surface-low border border-border-soft shadow-card flex flex-col justify-between hover:shadow-navy transition-all">
+        <div>
+          <div class="flex items-center gap-0.5 text-accent mb-3">
+            <span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-[13px] text-on-surface-muted italic leading-relaxed">"Tadbirkorlik faoliyatim uchun 777 seriyasini oldim. 20 daqiqada rasmiylashtirib berishdi. Haqiqiy premium daraja!"</p>
+        </div>
+        <div class="mt-4 pt-2 border-t border-border-soft flex items-center justify-between">
+          <span class="font-headline text-[14px] text-primary font-semibold">Jahongir R.</span>
+          <span class="text-[10px] uppercase font-bold text-on-surface-subtle">Toshkent</span>
+        </div>
+      </div>
+      <div class="p-5 rounded-2xl bg-surface-low border border-border-soft shadow-card flex flex-col justify-between hover:shadow-navy transition-all">
+        <div>
+          <div class="flex items-center gap-0.5 text-accent mb-3">
+            <span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-[13px] text-on-surface-muted italic leading-relaxed">"Мне нужен красивый номер для бизнеса. RAQAM подобрали идеальный вариант и оформили за 15 минут!"</p>
+        </div>
+        <div class="mt-4 pt-2 border-t border-border-soft flex items-center justify-between">
+          <span class="font-headline text-[14px] text-primary font-semibold">Алишер К.</span>
+          <span class="text-[10px] uppercase font-bold text-on-surface-subtle">Самарканд</span>
+        </div>
+      </div>
+      <div class="p-5 rounded-2xl bg-surface-low border border-border-soft shadow-card flex flex-col justify-between hover:shadow-navy transition-all">
+        <div>
+          <div class="flex items-center gap-0.5 text-accent mb-3">
+            <span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-[17px]" style="font-variation-settings:'FILL' 1">star</span>
+          </div>
+          <p class="text-[13px] text-on-surface-muted italic leading-relaxed">"Очень элегантный сервис. Консьерж помог с выбором, всё прозрачно и быстро. Рекомендую!"</p>
+        </div>
+        <div class="mt-4 pt-2 border-t border-border-soft flex items-center justify-between">
+          <span class="font-headline text-[14px] text-primary font-semibold">Дилшод М.</span>
+          <span class="text-[10px] uppercase font-bold text-on-surface-subtle">Бухара</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="savollar" class="px-4 sm:px-6 py-12 bg-surface-low">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-[11px] font-bold text-accent uppercase tracking-[0.25em]" data-uz="Savol va Javoblar" data-ru="Вопросы и Ответы">Savol va Javoblar</span>
+      <h2 class="font-headline text-2xl sm:text-3xl text-primary font-medium mt-1" data-uz="Tez-tez So'raladigan Savollar" data-ru="Часто Задаваемые Вопросы">Tez-tez So'raladigan Savollar</h2>
+      <div class="w-10 h-[2px] bg-accent mx-auto mt-2 rounded-full"></div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <div class="bg-white rounded-xl border border-border-soft p-4 shadow-card">
+        <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between text-left font-semibold text-primary text-[14px]">
+          <span data-uz="Raqam to'liq mening nomimga rasmiylashtiriladimi?" data-ru="Будет ли номер оформлен полностью на моё имя?">Raqam to'liq mening nomimga rasmiylashtiriladimi?</span>
+          <span id="faq-icon-1" class="material-symbols-outlined text-accent transition-transform duration-200">expand_more</span>
+        </button>
+        <div id="faq-body-1" class="hidden mt-2 pt-2 border-t border-border-soft text-[13px] text-on-surface-muted leading-relaxed"
+             data-uz="Ha, mutlaqo. Barcha jarayonlar O'zbekiston Respublikasi telekommunikatsiya qonunchiligi asosida rasmiy ravishda operatorlarning bosh ofislarida 100% sizning nomingizga rasmiylashtiriladi."
+             data-ru="Да, безусловно. Все процедуры осуществляются официально в центральных офисах операторов на основании законодательства РУз — 100% на ваше имя по паспорту или ID-карте.">
+          Ha, mutlaqo. Barcha jarayonlar O'zbekiston Respublikasi telekommunikatsiya qonunchiligi asosida rasmiy ravishda operatorlarning bosh ofislarida 100% sizning nomingizga rasmiylashtiriladi.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-border-soft p-4 shadow-card">
+        <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between text-left font-semibold text-primary text-[14px]">
+          <span data-uz="eSIM qancha vaqt ichida aktivlashadi?" data-ru="За сколько времени активируется eSIM?">eSIM qancha vaqt ichida aktivlashadi?</span>
+          <span id="faq-icon-2" class="material-symbols-outlined text-accent transition-transform duration-200">expand_more</span>
+        </button>
+        <div id="faq-body-2" class="hidden mt-2 pt-2 border-t border-border-soft text-[13px] text-on-surface-muted leading-relaxed"
+             data-uz="Buyurtma va identifikatsiyadan so'ng 10-15 daqiqa ichida rasmiy eSIM QR-kodi Telegram orqali sizga xavfsiz tarzda taqdim etiladi."
+             data-ru="После заказа и идентификации в течение 10-15 минут QR-код eSIM безопасно отправляется вам через Telegram.">
+          Buyurtma va identifikatsiyadan so'ng 10-15 daqiqa ichida rasmiy eSIM QR-kodi Telegram orqali sizga xavfsiz tarzda taqdim etiladi.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-border-soft p-4 shadow-card">
+        <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between text-left font-semibold text-primary text-[14px]">
+          <span data-uz="Yetkazib berish xizmati qanday ishlaydi?" data-ru="Как работает служба доставки?">Yetkazib berish xizmati qanday ishlaydi?</span>
+          <span id="faq-icon-3" class="material-symbols-outlined text-accent transition-transform duration-200">expand_more</span>
+        </button>
+        <div id="faq-body-3" class="hidden mt-2 pt-2 border-t border-border-soft text-[13px] text-on-surface-muted leading-relaxed"
+             data-uz="Toshkent shahri bo'ylab xususiy kuryerimiz orqali maxsus qadoqdagi fizik sim-karta va kafolat sertifikati 2 soat ichida topshiriladi. Viloyatlarga 24 soat ichida xavfsiz yetkaziladi."
+             data-ru="По Ташкенту физическая SIM с сертификатом гарантии доставляется в течение 2 часов. В регионы — в течение 24 часов специальной службой.">
+          Toshkent shahri bo'ylab xususiy kuryerimiz orqali maxsus qadoqdagi fizik sim-karta va kafolat sertifikati 2 soat ichida topshiriladi.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-border-soft p-4 shadow-card">
+        <button onclick="toggleFaq(4)" class="w-full flex items-center justify-between text-left font-semibold text-primary text-[14px]">
+          <span data-uz="To'lov qanday amalga oshiriladi?" data-ru="Как производится оплата?">To'lov qanday amalga oshiriladi?</span>
+          <span id="faq-icon-4" class="material-symbols-outlined text-accent transition-transform duration-200">expand_more</span>
+        </button>
+        <div id="faq-body-4" class="hidden mt-2 pt-2 border-t border-border-soft text-[13px] text-on-surface-muted leading-relaxed"
+             data-uz="Payme, Click, Uzum Bank va naqd pul orqali to'lov qabul qilinadi. 3 oyga bo'lib to'lash imkoniyati ham mavjud."
+             data-ru="Принимается оплата через Payme, Click, Uzum Bank и наличными. Также доступна рассрочка на 3 месяца.">
+          Payme, Click, Uzum Bank va naqd pul orqali to'lov qabul qilinadi. 3 oyga bo'lib to'lash imkoniyati ham mavjud.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="px-4 sm:px-6 py-12 bg-primary text-white text-center pb-24 md:pb-12">
+  <div class="max-w-4xl mx-auto flex flex-col items-center">
+    <img src="assets/logo.svg" alt="RAQAM" class="h-10 w-auto mb-3 object-contain opacity-90"/>
+    <p class="text-[13px] text-white/60 max-w-md mx-auto mb-5 leading-relaxed"
+       data-uz="O'zbekiston bo'ylab eng nufuzli, saralangan va huquqiy himoyalangan eksklyuziv telefon kombinatsiyalari rasmiy distribyutori."
+       data-ru="Официальный дистрибьютор самых престижных, отборных и юридически защищённых эксклюзивных телефонных комбинаций по всему Узбекистану.">
+      O'zbekiston bo'ylab eng nufuzli, saralangan va huquqiy himoyalangan eksklyuziv telefon kombinatsiyalari rasmiy distribyutori.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-5 text-[11px] font-bold uppercase tracking-widest mb-6 text-accent-dim">
+      <a href="#katalog" class="hover:text-white transition-colors" data-uz="Katalog" data-ru="Каталог">Katalog</a>
+      <span class="text-white/20">•</span>
+      <a href="#afzalliklar" class="hover:text-white transition-colors" data-uz="Kafolatlar" data-ru="Гарантии">Kafolatlar</a>
+      <span class="text-white/20">•</span>
+      <a href="https://t.me/raqamlaruz1bot" target="_blank" class="hover:text-white transition-colors">Telegram Bot</a>
+      <span class="text-white/20">•</span>
+      <a href="tel:+998907777777" class="hover:text-white transition-colors" data-uz="Konsyerj" data-ru="Консьерж">Konsyerj</a>
+    </div>
+    <div class="text-[11px] text-white/30 uppercase tracking-widest">
+      &copy; 2026 RAQAM Atelier. <span data-uz="Barcha huquqlar himoyalangan." data-ru="Все права защищены.">Barcha huquqlar himoyalangan.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== MOBILE NAV ========== -->
+<nav class="fixed bottom-0 w-full z-40 pb-safe bg-white/98 backdrop-blur-xl border-t border-border-soft md:hidden shadow-[0_-4px_20px_rgba(15,23,42,0.10)]">
+  <div class="flex items-center justify-around h-16 px-2">
+    <a href="#hero" class="flex flex-col items-center justify-center w-12 h-12 text-accent transition-colors">
+      <span class="material-symbols-outlined text-[22px]">home</span>
+      <span class="text-[9px] font-bold tracking-wider mt-0.5 uppercase" data-uz="Asosiy" data-ru="Главная">Asosiy</span>
+    </a>
+    <a href="#katalog" class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-subtle hover:text-accent transition-colors">
+      <span class="material-symbols-outlined text-[22px]">dialpad</span>
+      <span class="text-[9px] font-bold tracking-wider mt-0.5 uppercase" data-uz="Raqamlar" data-ru="Номера">Raqamlar</span>
+    </a>
+    <button onclick="filterByCategoryCard('VIP')" class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-subtle hover:text-accent transition-colors">
+      <span class="material-symbols-outlined text-[22px]">military_tech</span>
+      <span class="text-[9px] font-bold tracking-wider mt-0.5 uppercase">VIP</span>
+    </button>
+    <button onclick="openWishlistModal()" class="relative flex flex-col items-center justify-center w-12 h-12 text-on-surface-subtle hover:text-accent transition-colors">
+      <span class="material-symbols-outlined text-[22px]">favorite</span>
+      <span class="text-[9px] font-bold tracking-wider mt-0.5 uppercase" data-uz="Sevimli" data-ru="Избранное">Sevimli</span>
+      <span id="favCountBadgeMobile" class="absolute top-1 right-2 min-w-[14px] h-3.5 px-0.5 bg-accent text-white font-bold text-[8px] rounded-full flex items-center justify-center">0</span>
+    </button>
+    <a href="https://t.me/raqamlaruz1bot" target="_blank" class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-subtle hover:text-accent transition-colors">
+      <span class="material-symbols-outlined text-[22px]">support_agent</span>
+      <span class="text-[9px] font-bold tracking-wider mt-0.5 uppercase" data-uz="Konsyerj" data-ru="Консьерж">Konsyerj</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ========== DOSSIER MODAL ========== -->
+<div id="numberDossierModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-primary/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="dossierModalSheet" class="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl transform translate-y-full transition-transform duration-300 border border-border-soft">
+    <div class="w-12 h-1 bg-border-mid rounded-full mx-auto mb-4 sm:hidden"></div>
+    <div class="flex items-start justify-between mb-4">
+      <div>
+        <span id="dossierTierBadge" class="px-2.5 py-0.5 rounded-full bg-surface-high text-primary text-[10px] font-bold tracking-wider uppercase">VIP STATUS</span>
+        <span id="dossierOperatorBadge" class="text-[11px] text-on-surface-subtle font-bold uppercase tracking-wider ml-2">Beeline</span>
+      </div>
+      <button onclick="closeNumberDossier()" class="w-8 h-8 rounded-full bg-surface-low flex items-center justify-center text-on-surface-subtle hover:text-on-surface">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="text-center py-5 px-4 bg-primary text-white rounded-2xl mb-4 shadow-inner relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/25 rounded-full blur-xl pointer-events-none"></div>
+      <p class="text-[10px] uppercase tracking-widest text-accent-dim font-bold mb-1" data-uz="Lot Pasporti &amp; Sertifikat" data-ru="Паспорт Лота &amp; Сертификат">Lot Pasporti &amp; Sertifikat</p>
+      <h2 id="dossierNumberTitle" class="font-headline text-3xl sm:text-4xl text-accent-dim font-bold tracking-wide tabular-numbers">+998 90 777 77 77</h2>
+      <p id="dossierDescText" class="text-[12px] text-white/70 mt-1.5 font-medium"></p>
+    </div>
+    <div class="flex flex-col gap-2.5 mb-5 bg-surface-low p-4 rounded-xl border border-border-soft">
+      <div class="flex items-center justify-between text-[13px] py-1 border-b border-border-soft">
+        <span class="text-on-surface-muted" data-uz="Huquqiy maqomi:" data-ru="Правовой статус:">Huquqiy maqomi:</span>
+        <span class="font-bold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-accent text-[16px]">verified</span><span data-uz="100% Toza, yangi lot" data-ru="100% Чистый, новый лот">100% Toza, yangi lot</span></span>
+      </div>
+      <div class="flex items-center justify-between text-[13px] py-1 border-b border-border-soft">
+        <span class="text-on-surface-muted" data-uz="Rasmiylashtirish muddati:" data-ru="Срок оформления:">Rasmiylashtirish muddati:</span>
+        <span class="font-bold text-primary" data-uz="15 daqiqa (eSIM / Plastik)" data-ru="15 минут (eSIM / Пластик)">15 daqiqa (eSIM / Plastik)</span>
+      </div>
+      <div class="flex items-center justify-between text-[13px] py-1 border-b border-border-soft">
+        <span class="text-on-surface-muted" data-uz="Bo'lib to'lash (3 oy):" data-ru="Рассрочка (3 мес.):">Bo'lib to'lash (3 oy):</span>
+        <span id="dossierInstallmentTag" class="font-bold text-accent">833 000 so'm / oy</span>
+      </div>
+      <div class="flex items-center justify-between text-[14px] pt-1">
+        <span class="text-on-surface-muted font-medium" data-uz="Yakuniy qiymati:" data-ru="Итоговая стоимость:">Yakuniy qiymati:</span>
+        <span id="dossierPriceTag" class="font-headline text-xl text-accent font-bold">2 500 000 so'm</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2.5">
+      <button onclick="proceedToCheckoutFromDossier()" class="w-full py-4 rounded-xl bg-primary text-white font-headline font-bold text-[14px] tracking-wider uppercase shadow-navy hover:bg-accent transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+        <span data-uz="Darhol Xarid Qilish" data-ru="Купить Сейчас">Darhol Xarid Qilish</span>
+      </button>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="toggleDossierWishlist()" class="py-2.5 px-3 rounded-xl bg-surface-low text-on-surface font-semibold text-[11px] uppercase tracking-wider hover:bg-surface-high transition-colors flex items-center justify-center gap-1.5 border border-border-soft">
+          <span class="material-symbols-outlined text-[17px] text-accent">favorite</span>
+          <span id="dossierFavText" data-uz="Saqlash" data-ru="Сохранить">Saqlash</span>
+        </button>
+        <button onclick="shareActiveNumber()" class="py-2.5 px-3 rounded-xl bg-surface-low text-on-surface font-semibold text-[11px] uppercase tracking-wider hover:bg-surface-high transition-colors flex items-center justify-center gap-1.5 border border-border-soft">
+          <span class="material-symbols-outlined text-[17px] text-accent">share</span>
+          <span data-uz="Ulashish" data-ru="Поделиться">Ulashish</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CHECKOUT MODAL ========== -->
+<div id="checkoutModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-primary/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="checkoutModalSheet" class="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl transform translate-y-full transition-transform duration-300 border border-border-soft">
+    <div class="w-12 h-1 bg-border-mid rounded-full mx-auto mb-4 sm:hidden"></div>
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-surface-high flex items-center justify-center text-accent"><span class="material-symbols-outlined text-[22px]">gavel</span></div>
+        <div>
+          <h3 class="font-headline text-lg font-bold text-primary" data-uz="Notarial Rasmiylashtirish" data-ru="Нотариальное Оформление">Notarial Rasmiylashtirish</h3>
+          <span id="checkoutOrderRef" class="text-[10px] text-accent uppercase font-bold tracking-wider">Buyurtma: #RQ-77701</span>
+        </div>
+      </div>
+      <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-surface-low flex items-center justify-center text-on-surface-subtle hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">close</span></button>
+    </div>
+    <div class="p-4 bg-primary text-white rounded-xl mb-4 flex items-center justify-between shadow-inner">
+      <div>
+        <span class="text-[10px] text-accent-dim uppercase font-bold tracking-widest block" data-uz="Tanlangan Raqam:" data-ru="Выбранный Номер:">Tanlangan Raqam:</span>
+        <span id="checkoutSelectedNumber" class="font-headline text-xl sm:text-2xl text-accent-dim font-bold tabular-numbers">+998 90 777 77 77</span>
+        <span id="checkoutOperatorLabel" class="text-[11px] text-white/60 block mt-0.5">Beeline VIP Seriya</span>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] text-white/60 uppercase block" data-uz="Qiymati:" data-ru="Стоимость:">Qiymati:</span>
+        <span id="checkoutPriceLabel" class="font-headline text-lg text-accent-dim font-bold">2 500 000 so'm</span>
+      </div>
+    </div>
+    <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-3.5">
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1"><span data-uz="F.I.SH (To'liq Ism-sharifingiz)" data-ru="ФИО (Полное имя)">F.I.SH (To'liq Ism-sharifingiz)</span> <span class="text-red-500">*</span></label>
+        <input id="buyerName" type="text" required placeholder="Azizov Alisher Rustamovich" class="w-full p-3 rounded-xl bg-surface-low border border-border-soft text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"/>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1"><span data-uz="Bog'lanish Telefon Raqamingiz" data-ru="Контактный Телефон">Bog'lanish Telefon Raqamingiz</span> <span class="text-red-500">*</span></label>
+        <input id="buyerPhone" type="tel" required placeholder="+998 90 123 45 67" class="w-full p-3 rounded-xl bg-surface-low border border-border-soft text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"/>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1" data-uz="Qabul Qilish Usuli" data-ru="Способ Получения">Qabul Qilish Usuli</label>
+          <select id="deliveryFormat" class="w-full p-3 rounded-xl bg-surface-low border border-border-soft text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent">
+            <option value="eSIM (15 daqiqa ichida Telegram orqali)">&#9889; eSIM Tezkor (15 daqiqa)</option>
+            <option value="Diplomatik Kuryer (Fizik SIM karta)">&#128230; Diplomatik Kuryer (Oltin Qadoq)</option>
+            <option value="Bosh ofisdan olib ketish">&#127970; Bosh ofisdan shaxsan olish</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1" data-uz="Shahar / Viloyat" data-ru="Город / Область">Shahar / Viloyat</label>
+          <select id="buyerRegion" class="w-full p-3 rounded-xl bg-surface-low border border-border-soft text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent">
+            <option>Toshkent shahri</option><option>Samarqand</option><option>Buxoro</option><option>Andijon</option><option>Farg'ona</option><option>Namangan</option><option>Qashqadaryo</option><option>Surxondaryo</option><option>Xorazm</option><option>Navoiy</option><option>Jizzax</option><option>Sirdaryo</option><option>Qoraqalpog'iston</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1" data-uz="To'lov turi" data-ru="Тип оплаты">To'lov turi</label>
+        <div class="grid grid-cols-3 gap-2">
+          <label class="flex items-center justify-center p-2.5 rounded-xl border border-border-soft bg-surface-low text-[12px] font-semibold cursor-pointer has-[:checked]:border-accent has-[:checked]:bg-surface-high has-[:checked]:text-accent"><input type="radio" name="paymentMethod" value="Payme / Click" checked class="hidden"/><span>Payme / Click</span></label>
+          <label class="flex items-center justify-center p-2.5 rounded-xl border border-border-soft bg-surface-low text-[12px] font-semibold cursor-pointer has-[:checked]:border-accent has-[:checked]:bg-surface-high has-[:checked]:text-accent"><input type="radio" name="paymentMethod" value="Uzum Bank" class="hidden"/><span>Uzum Bank</span></label>
+          <label class="flex items-center justify-center p-2.5 rounded-xl border border-border-soft bg-surface-low text-[12px] font-semibold cursor-pointer has-[:checked]:border-accent has-[:checked]:bg-surface-high has-[:checked]:text-accent"><input type="radio" name="paymentMethod" value="Naqd / Konsyerj" class="hidden"/><span data-uz="Naqd pul" data-ru="Наличными">Naqd pul</span></label>
+        </div>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-subtle mb-1" data-uz="Qo'shimcha istaklar (Ixtiyoriy)" data-ru="Дополнительные пожелания (необязательно)">Qo'shimcha istaklar (Ixtiyoriy)</label>
+        <textarea id="buyerNotes" rows="2" placeholder="Masalan: Soat 14:00 dan keyin qo'ng'iroq qiling..." class="w-full p-2.5 rounded-xl bg-surface-low border border-border-soft text-primary text-[12px] outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"></textarea>
+      </div>
+      <div id="orderStatusAlert" class="hidden p-3 rounded-xl text-[12px] leading-relaxed"></div>
+      <button id="submitOrderBtn" type="submit" class="w-full mt-3 py-4 rounded-xl bg-accent text-white font-headline font-bold text-[14px] uppercase tracking-wider hover:bg-accent-light shadow-blue transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">send</span>
+        <span id="submitOrderBtnText" data-uz="BUYURTMANI TASDIQLASH VA YUBORISH" data-ru="ПОДТВЕРДИТЬ И ОТПРАВИТЬ ЗАКАЗ">BUYURTMANI TASDIQLASH VA YUBORISH</span>
+      </button>
+      <p class="text-[10px] text-center text-on-surface-subtle uppercase tracking-wider mt-2">
+        &#128274; <span data-uz="Shaxsiy ma'lumotlar davlat axborot xavfsizligi talablari asosida himoyalanadi" data-ru="Персональные данные защищены по требованиям государственной информационной безопасности">Shaxsiy ma'lumotlar davlat axborot xavfsizligi talablari asosida himoyalanadi</span>
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- ========== RECEIPT MODAL ========== -->
+<div id="receiptModal" class="fixed inset-0 z-50 flex items-center justify-center bg-primary/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl p-6 shadow-2xl border border-border-soft text-center relative overflow-hidden">
+    <div class="w-16 h-16 rounded-full bg-surface-high text-accent flex items-center justify-center mx-auto mb-3 shadow"><span class="material-symbols-outlined text-[36px]">verified</span></div>
+    <span class="text-[10px] text-accent font-bold tracking-widest uppercase" data-uz="Buyurtma Muvaffaqiyatli Qabul Qilindi" data-ru="Заказ Успешно Принят">Buyurtma Muvaffaqiyatli Qabul Qilindi</span>
+    <h3 class="font-headline text-2xl text-primary font-bold mt-1" data-uz="Tabriklaymiz!" data-ru="Поздравляем!">Tabriklaymiz!</h3>
+    <p class="text-[13px] text-on-surface-muted mt-1 mb-4" data-uz="Sizning tanlovingiz muvaffaqiyatli ro'yxatdan o'tdi va shaxsiy konsyerj mutaxassisi biriktirildi." data-ru="Ваш выбор успешно зарегистрирован и персональный консьерж уже назначен.">Sizning tanlovingiz muvaffaqiyatli ro'yxatdan o'tdi va shaxsiy konsyerj mutaxassisi biriktirildi.</p>
+    <div class="p-4 bg-surface-low rounded-xl border border-border-soft text-left text-[12px] space-y-1.5 mb-5 font-mono">
+      <div class="flex justify-between"><span class="text-on-surface-subtle" data-uz="Buyurtma kodi:" data-ru="Код заказа:">Buyurtma kodi:</span><span id="receiptOrderCode" class="font-bold text-primary">#RQ-94821</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-subtle" data-uz="Raqam:" data-ru="Номер:">Raqam:</span><span id="receiptNumber" class="font-bold text-accent">+998 90 777 77 77</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-subtle" data-uz="Xaridor:" data-ru="Покупатель:">Xaridor:</span><span id="receiptBuyer" class="font-bold text-primary">Azizov Alisher</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-subtle" data-uz="Holati:" data-ru="Статус:">Holati:</span><span class="font-bold text-emerald-600" data-uz="Telegram Botga Yetkazildi" data-ru="Отправлено в Telegram Bot">Telegram Botga Yetkazildi</span></div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <a id="receiptBotLink" href="https://t.me/raqamlaruz1bot" target="_blank" class="w-full py-3 rounded-xl bg-primary text-white font-bold text-[12px] uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-accent transition-colors">
+        <span class="material-symbols-outlined text-[16px]">chat</span>
+        <span data-uz="Telegram Botda Ko'rish" data-ru="Открыть в Telegram Bot">Telegram Botda Ko'rish</span>
+      </a>
+      <button onclick="closeReceiptModal()" class="w-full py-2.5 rounded-xl bg-surface-low text-on-surface font-semibold text-[12px] uppercase tracking-wider hover:bg-surface-high transition-colors border border-border-soft" data-uz="Yopish" data-ru="Закрыть">Yopish</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WISHLIST MODAL ========== -->
+<div id="wishlistModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-primary/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="wishlistModalSheet" class="w-full max-w-lg max-h-[85vh] overflow-y-auto bg-white rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl transform translate-y-full transition-transform duration-300 border border-border-soft">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-accent text-[24px]">favorite</span>
+        <h3 class="font-headline text-lg font-bold text-primary" data-uz="Mening Sevimlilarim" data-ru="Мои Избранные">Mening Sevimlilarim</h3>
+      </div>
+      <button onclick="closeWishlistModal()" class="w-8 h-8 rounded-full bg-surface-low flex items-center justify-center text-on-surface-subtle hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">close</span></button>
+    </div>
+    <div id="wishlistItemsContainer" class="flex flex-col gap-3 my-3"></div>
+    <div id="emptyWishlistState" class="hidden py-10 text-center flex-col items-center">
+      <span class="material-symbols-outlined text-[40px] text-on-surface-subtle mb-2">favorite_border</span>
+      <p class="text-[13px] text-on-surface-muted" data-uz="Hozircha saqlangan raqamlar mavjud emas." data-ru="Пока нет сохранённых номеров.">Hozircha saqlangan raqamlar mavjud emas.</p>
+      <button onclick="closeWishlistModal(); scrollToSearch();" class="mt-3 px-4 py-2 rounded-full bg-accent text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent-light" data-uz="Katalogdan tanlash" data-ru="Выбрать из каталога">Katalogdan tanlash</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOAST ========== -->
+<div id="toastNotification" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50 bg-primary text-white border border-accent/30 px-5 py-2.5 rounded-full font-semibold text-[12px] tracking-wider uppercase shadow-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+  <span class="material-symbols-outlined text-[16px] text-accent-dim">info</span>
+  <span id="toastMessage">Xabar</span>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  const TELEGRAM_CONFIG = {
+    botToken: "8972377880:AAHb92twEsLbXxFGqLxglV6Ja-FkWbl4Lv4",
+    chatId: "8510937645",
+    botUsername: "raqamlaruz1bot"
+  };
+
+  let currentLang = localStorage.getItem("raqam_lang") || "uz";
+
+  const TRANSLATIONS = {
+    resultsCount: { uz: n => n + " ta eksklyuziv lot", ru: n => n + " эксклюзивных лота" },
+    dossierSaved:    { uz: "Saqlangan (★)", ru: "Сохранено (★)" },
+    dossierUnsaved:  { uz: "Saqlash",       ru: "Сохранить" },
+    toastSaved:      { uz: "Sevimlilarga saqlandi",    ru: "Добавлено в избранное" },
+    toastRemoved:    { uz: "Sevimlilardan o'chirildi", ru: "Удалено из избранного" },
+    toastCopied:     { uz: "Havola nusxalandi!",       ru: "Ссылка скопирована!" },
+    toastAnswered:   { uz: "Qo'ng'iroq ulandi: VIP konsyerj", ru: "Звонок принят: VIP консьерж" },
+    toastDeclined:   { uz: "Qo'ng'iroq yakunlandi",   ru: "Звонок завершён" },
+    toastRejected:   { uz: "Qo'ng'iroq rad etildi",   ru: "Звонок отклонён" },
+    callConnected:   { uz: "Bog'lanildi • Jonli VIP Aloqa", ru: "Соединено • VIP Линия" },
+    callEnded:       { uz: "Qo'ng'iroq yakunlandi",   ru: "Звонок завершён" },
+    callIncoming:    { uz: "Kiruvchi qo'ng'iroq...",  ru: "Входящий звонок..." },
+    cardDossier:     { uz: "Dossier", ru: "Досье" },
+    cardBuy:         { uz: "Xarid",   ru: "Купить" },
+    cardValuation:   { uz: "Baholash:", ru: "Стоимость:" },
+    cardFavorite:    { uz: "Sevimlilarga qo'shish", ru: "В избранное" },
+    orderSending:    { uz: "Yuborilmoqda...", ru: "Отправка..." },
+    orderBtnDefault: { uz: "BUYURTMANI TASDIQLASH VA YUBORISH", ru: "ПОДТВЕРДИТЬ И ОТПРАВИТЬ ЗАКАЗ" },
+    wishlistBuy:     { uz: "Xarid", ru: "Купить" }
+  };
+
+  function t(key, arg) {
+    const e = TRANSLATIONS[key];
+    if (!e) return key;
+    const v = e[currentLang] || e["uz"];
+    return typeof v === "function" ? v(arg) : v;
+  }
+
+  function applyLangToScope(scope) {
+    (scope || document).querySelectorAll("[data-uz]").forEach(el => {
+      const key = currentLang === "ru" ? el.dataset.ru : el.dataset.uz;
+      if (key !== undefined) el.textContent = key;
+    });
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem("raqam_lang", lang);
+    document.documentElement.lang = lang;
+    document.getElementById("btnLangUz").classList.toggle("active", lang === "uz");
+    document.getElementById("btnLangRu").classList.toggle("active", lang === "ru");
+    document.getElementById("btnLangUz").classList.toggle("text-on-surface-subtle", lang !== "uz");
+    document.getElementById("btnLangRu").classList.toggle("text-on-surface-subtle", lang !== "ru");
+    applyLangToScope(document);
+    renderInventory();
+  }
+
+  let INVENTORY = [];
+
+  let selectedNumberLot = INVENTORY[0];
+  let activeOperator = "all", activeMaxPrice = "all", activeCategory = "all", currentSearchQuery = "";
+  let wishlist = JSON.parse(localStorage.getItem("raqam_wishlist") || "[]");
+
+  const HERO_SEQUENCES = [
+    { num:"+998 90 777 77 77", op:"BEELINE VIP CONCIERGE" },
+    { num:"+998 91 555 55 55", op:"UCELL GOLDEN RESERVE" },
+    { num:"+998 95 888 88 88", op:"UZTELECOM IMPERIAL" },
+    { num:"+998 99 111 11 11", op:"MOBIUZ PRESTIGE" },
+    { num:"+998 90 700 00 07", op:"BEELINE MONOGRAM" }
+  ];
+  let typingIndex=0, charIndex=0, isDeleting=false, isCallActive=false, callTimerInterval=null, callSeconds=0;
+
+  function initHeroTyping() {
+    const displayEl = document.getElementById("liveTypingNumber");
+    const badgeEl   = document.getElementById("activeOperatorBadge");
+    if (!displayEl || !badgeEl) return;
+    function tick() {
+      if (isCallActive) return;
+      const seq = HERO_SEQUENCES[typingIndex];
+      const full = seq.num;
+      if (!isDeleting) {
+        charIndex++;
+        displayEl.textContent = full.substring(0, charIndex);
+        if (charIndex === full.length) { isDeleting = true; setTimeout(tick, 2200); return; }
+      } else {
+        charIndex--;
+        displayEl.textContent = full.substring(0, charIndex) || "+998 ";
+        if (charIndex <= 5) {
+          isDeleting = false;
+          typingIndex = (typingIndex + 1) % HERO_SEQUENCES.length;
+          badgeEl.textContent = HERO_SEQUENCES[typingIndex].op;
+          setTimeout(tick, 300); return;
+        }
+      }
+      setTimeout(tick, isDeleting ? 40 : 80);
+    }
+    setTimeout(tick, 600);
+  }
+
+  let audioCtx = null;
+  function playBeep(freq=440, type='sine', dur=0.2) {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!audioCtx) audioCtx = new AC();
+      const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+      osc.type=type; osc.frequency.setValueAtTime(freq,audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.15,audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+dur);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc.stop(audioCtx.currentTime+dur);
+    } catch(e){}
+  }
+
+  function handlePhoneAnswer() {
+    isCallActive = true;
+    playBeep(523.25,'triangle',0.3); setTimeout(()=>playBeep(659.25,'triangle',0.4),150);
+    const sEl=document.getElementById("callStatusLabel"), dC=document.getElementById("callDurationContainer"), dT=document.getElementById("callDurationTimer");
+    sEl.textContent=t("callConnected"); sEl.classList.add("text-emerald-400"); dC.classList.remove("hidden");
+    clearInterval(callTimerInterval); callSeconds=0;
+    callTimerInterval=setInterval(()=>{callSeconds++;const m=String(Math.floor(callSeconds/60)).padStart(2,'0'),s=String(callSeconds%60).padStart(2,'0');dT.textContent=m+":"+s;},1000);
+    showToast(t("toastAnswered"));
+  }
+  function handlePhoneDecline() {
+    if (isCallActive) {
+      isCallActive=false; clearInterval(callTimerInterval); playBeep(220,'sawtooth',0.25);
+      const sEl=document.getElementById("callStatusLabel"), dC=document.getElementById("callDurationContainer");
+      sEl.textContent=t("callEnded"); sEl.classList.remove("text-emerald-400"); dC.classList.add("hidden");
+      setTimeout(()=>{sEl.textContent=t("callIncoming"); initHeroTyping();},1200);
+      showToast(t("toastDeclined"));
+    } else { showToast(t("toastRejected")); }
+  }
+  function handlePhoneInspect() {
+    const cur=HERO_SEQUENCES[typingIndex].num;
+    const m=INVENTORY.find(i=>i.number===cur)||INVENTORY[0];
+    openNumberDossier(m.id);
+  }
+
+  function renderInventory() {
+    const grid=document.getElementById("numbersGrid"), noR=document.getElementById("noResultsState"), cL=document.getElementById("resultsCount");
+    if (!grid) return;
+    const filtered=INVENTORY.filter(it=>{
+      const q=currentSearchQuery;
+      return (!q||it.raw.includes(q)||it.number.includes(q))
+        &&(activeOperator==="all"||it.operator.toLowerCase()===activeOperator.toLowerCase())
+        &&(activeMaxPrice==="all"||it.price<=parseInt(activeMaxPrice,10))
+        &&(activeCategory==="all"||it.category.toLowerCase()===activeCategory.toLowerCase());
+    });
+    if (cL) cL.textContent=t("resultsCount",filtered.length);
+    if (filtered.length===0) {
+      grid.innerHTML=""; noR.classList.remove("hidden"); noR.classList.add("flex");
+      applyLangToScope(noR); return;
+    }
+    noR.classList.add("hidden"); noR.classList.remove("flex");
+    grid.innerHTML=filtered.map(item=>{
+      const isW=wishlist.includes(item.id);
+      const fp=item.price.toLocaleString("uz-UZ")+" so'm";
+      const desc=currentLang==="ru"?item.desc_ru:item.desc_uz;
+      const catBadge=item.category==="VIP"?"bg-primary text-white":"bg-surface-high text-primary";
+      return `<div class="number-card group relative p-5 rounded-2xl bg-white border border-border-soft shadow-card transition-all flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full ${catBadge} text-[10px] font-bold uppercase tracking-wider">${item.tier}</span>
+            <span class="text-[11px] font-bold text-on-surface-subtle uppercase tracking-wider">${item.operator} &bull; ${item.series}</span>
+          </div>
+          <button onclick="toggleWishlist('${item.id}',event)" aria-label="${t('cardFavorite')}" class="p-1.5 rounded-full hover:bg-surface-low transition-colors ${isW?'text-accent':'text-on-surface-subtle hover:text-accent'}">
+            <span class="material-symbols-outlined text-[20px]" style="${isW?"font-variation-settings:'FILL' 1;":""}">favorite</span>
+          </button>
+        </div>
+        <div onclick="openNumberDossier('${item.id}')" class="cursor-pointer py-1">
+          <div class="font-headline text-2xl sm:text-[26px] font-bold text-primary tracking-wide tabular-numbers group-hover:text-accent transition-colors">${item.number}</div>
+          <p class="text-[12px] text-on-surface-muted mt-1 line-clamp-1">${desc}</p>
+        </div>
+        <div class="flex items-center justify-between pt-4 mt-2 border-t border-border-soft">
+          <div>
+            <span class="text-[9px] font-bold text-on-surface-subtle uppercase tracking-wider block">${t('cardValuation')}</span>
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-headline text-lg font-bold text-accent">${fp}</span>
+              <span class="text-[11px] text-on-surface-subtle font-mono">&#8776; $${item.priceUsd}</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="openNumberDossier('${item.id}')" class="px-3.5 py-2 rounded-xl bg-surface-low hover:bg-surface-high text-primary font-bold text-[11px] uppercase tracking-wider transition-colors border border-border-soft">${t('cardDossier')}</button>
+            <button onclick="openDirectOrderModal('${item.number}','${fp}','${item.operator} ${item.tier}')" class="px-4 py-2 rounded-xl bg-primary text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent shadow transition-all">${t('cardBuy')}</button>
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  function setOperatorFilter(op,el) {
+    activeOperator=op;
+    document.querySelectorAll(".operator-pill").forEach(p=>{p.classList.remove("active");p.classList.add("bg-white","text-on-surface-muted");});
+    el.classList.add("active"); el.classList.remove("bg-white","text-on-surface-muted");
+    renderInventory();
+  }
+  function setPriceFilter(mp,el) {
+    activeMaxPrice=mp;
+    document.querySelectorAll(".price-pill").forEach(p=>p.classList.remove("active"));
+    el.classList.add("active"); renderInventory();
+  }
+  function setCategoryFilter(cat,el) {
+    activeCategory=cat;
+    document.querySelectorAll(".category-pill").forEach(p=>p.classList.remove("active"));
+    el.classList.add("active"); renderInventory();
+  }
+  function filterByCategoryCard(cat) {
+    activeCategory=cat;
+    const btn=Array.from(document.querySelectorAll(".category-pill")).find(b=>b.textContent.trim().toLowerCase()===cat.toLowerCase());
+    if (btn){document.querySelectorAll(".category-pill").forEach(p=>p.classList.remove("active"));btn.classList.add("active");}
+    renderInventory();
+    document.getElementById("katalog").scrollIntoView({behavior:"smooth"});
+  }
+  function resetAllFilters() {
+    activeOperator="all"; activeMaxPrice="all"; activeCategory="all"; currentSearchQuery="";
+    const si=document.getElementById("numberSearchInput"); if(si)si.value="";
+    document.getElementById("clearSearchBtn").classList.add("hidden");
+    document.querySelectorAll(".operator-pill").forEach((p,i)=>{p.classList.remove("active");if(i===0)p.classList.add("active");});
+    document.querySelectorAll(".price-pill").forEach((p,i)=>{p.classList.remove("active");if(i===0)p.classList.add("active");});
+    document.querySelectorAll(".category-pill").forEach((p,i)=>{p.classList.remove("active");if(i===0)p.classList.add("active");});
+    renderInventory();
+  }
+  function scrollToSearch() {
+    const inp=document.getElementById("numberSearchInput");
+    if(inp){inp.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>inp.focus(),400);}
+  }
+  function clearSearch() {
+    const inp=document.getElementById("numberSearchInput"); inp.value=""; currentSearchQuery="";
+    document.getElementById("clearSearchBtn").classList.add("hidden"); renderInventory();
+  }
+  document.getElementById("numberSearchInput").addEventListener("input",e=>{
+    currentSearchQuery=e.target.value.trim().replace(/[^0-9+]/g,'');
+    document.getElementById("clearSearchBtn").classList.toggle("hidden",e.target.value.length===0);
+    renderInventory();
+  });
+
+  function updateWishlistBadges() {
+    const c=wishlist.length;
+    ["favCountBadge","favCountBadgeMobile"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=c;});
+  }
+  function toggleWishlist(id,event) {
+    if(event)event.stopPropagation();
+    const idx=wishlist.indexOf(id);
+    if(idx>-1){wishlist.splice(idx,1);showToast(t("toastRemoved"));}
+    else{wishlist.push(id);showToast(t("toastSaved"));}
+    localStorage.setItem("raqam_wishlist",JSON.stringify(wishlist));
+    updateWishlistBadges(); renderInventory();
+  }
+  function openWishlistModal() {
+    const modal=document.getElementById("wishlistModal"),sheet=document.getElementById("wishlistModalSheet");
+    const cont=document.getElementById("wishlistItemsContainer"),empty=document.getElementById("emptyWishlistState");
+    const saved=INVENTORY.filter(i=>wishlist.includes(i.id));
+    if(saved.length===0){
+      cont.innerHTML=""; empty.classList.remove("hidden"); empty.classList.add("flex"); applyLangToScope(empty);
+    } else {
+      empty.classList.add("hidden"); empty.classList.remove("flex");
+      cont.innerHTML=saved.map(item=>`
+        <div class="p-3.5 bg-surface-low rounded-xl border border-border-soft flex items-center justify-between">
+          <div>
+            <span class="font-headline text-base font-bold text-primary">${item.number}</span>
+            <span class="text-[11px] text-accent font-semibold block">${item.price.toLocaleString("uz-UZ")} so'm</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="closeWishlistModal();openDirectOrderModal('${item.number}','${item.price.toLocaleString("uz-UZ")} so\\'m','${item.operator} ${item.tier}');" class="px-3 py-1.5 rounded-lg bg-primary text-white text-[11px] font-bold uppercase hover:bg-accent transition-colors">${t('wishlistBuy')}</button>
+            <button onclick="toggleWishlist('${item.id}',null);openWishlistModal();" class="p-1 text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+          </div>
+        </div>`).join("");
+    }
+    modal.classList.remove("opacity-0","pointer-events-none"); sheet.classList.remove("translate-y-full");
+  }
+  function closeWishlistModal() {
+    document.getElementById("wishlistModal").classList.add("opacity-0","pointer-events-none");
+    document.getElementById("wishlistModalSheet").classList.add("translate-y-full");
+  }
+
+  function openNumberDossier(id) {
+    const item=INVENTORY.find(x=>x.id===id)||INVENTORY[0]; selectedNumberLot=item;
+    document.getElementById("dossierNumberTitle").textContent=item.number;
+    document.getElementById("dossierTierBadge").textContent=item.tier+" \u2022 "+item.category;
+    document.getElementById("dossierOperatorBadge").textContent=item.operator;
+    document.getElementById("dossierDescText").textContent=currentLang==="ru"?item.desc_ru:item.desc_uz;
+    document.getElementById("dossierPriceTag").textContent=item.price.toLocaleString("uz-UZ")+" so'm";
+    document.getElementById("dossierInstallmentTag").textContent=Math.round(item.price/3).toLocaleString("uz-UZ")+" so'm / oy";
+    document.getElementById("dossierFavText").textContent=wishlist.includes(item.id)?t("dossierSaved"):t("dossierUnsaved");
+    applyLangToScope(document.getElementById("dossierModalSheet"));
+    document.getElementById("numberDossierModal").classList.remove("opacity-0","pointer-events-none");
+    document.getElementById("dossierModalSheet").classList.remove("translate-y-full");
+  }
+  function closeNumberDossier() {
+    document.getElementById("numberDossierModal").classList.add("opacity-0","pointer-events-none");
+    document.getElementById("dossierModalSheet").classList.add("translate-y-full");
+  }
+  function toggleDossierWishlist() {
+    if(!selectedNumberLot)return; toggleWishlist(selectedNumberLot.id);
+    document.getElementById("dossierFavText").textContent=wishlist.includes(selectedNumberLot.id)?t("dossierSaved"):t("dossierUnsaved");
+  }
+  function proceedToCheckoutFromDossier() {
+    if(!selectedNumberLot)return; closeNumberDossier();
+    setTimeout(()=>openDirectOrderModal(selectedNumberLot.number,selectedNumberLot.price.toLocaleString("uz-UZ")+" so'm",selectedNumberLot.operator+" "+selectedNumberLot.tier),250);
+  }
+  function shareActiveNumber() {
+    if(!selectedNumberLot)return;
+    const text="&#128142; RAQAM VIP: "+selectedNumberLot.number+" ("+selectedNumberLot.price.toLocaleString("uz-UZ")+" so'm)";
+    if(navigator.share){navigator.share({title:"RAQAM Dossier",text,url:window.location.href}).catch(()=>{});}
+    else{navigator.clipboard.writeText(text+"\n"+window.location.href);showToast(t("toastCopied"));}
+  }
+
+  let curChkNum="+998 90 777 77 77", curChkPrice="2 500 000 so'm", curChkOp="Beeline VIP";
+  function openDirectOrderModal(number,price,op) {
+    curChkNum=number; curChkPrice=price; curChkOp=op;
+    const code="RQ-"+Math.floor(10000+Math.random()*90000);
+    document.getElementById("checkoutOrderRef").textContent="Dossier: #"+code;
+    document.getElementById("checkoutSelectedNumber").textContent=number;
+    document.getElementById("checkoutPriceLabel").textContent=price;
+    document.getElementById("checkoutOperatorLabel").textContent=op;
+    document.getElementById("orderStatusAlert").classList.add("hidden");
+    applyLangToScope(document.getElementById("checkoutModalSheet"));
+    document.getElementById("checkoutModal").classList.remove("opacity-0","pointer-events-none");
+    document.getElementById("checkoutModalSheet").classList.remove("translate-y-full");
+  }
+  function closeCheckoutModal() {
+    document.getElementById("checkoutModal").classList.add("opacity-0","pointer-events-none");
+    document.getElementById("checkoutModalSheet").classList.add("translate-y-full");
+  }
+  async function handleOrderSubmit(e) {
+    e.preventDefault();
+    const name=document.getElementById("buyerName").value.trim();
+    const phone=document.getElementById("buyerPhone").value.trim();
+    const format=document.getElementById("deliveryFormat").value;
+    const region=document.getElementById("buyerRegion").value;
+    const payment=document.querySelector('input[name="paymentMethod"]:checked')?.value||"Payme / Click";
+    const notes=document.getElementById("buyerNotes").value.trim();
+    const refCode=document.getElementById("checkoutOrderRef").textContent.replace("Dossier: #","");
+    const sBtn=document.getElementById("submitOrderBtn"),sTxt=document.getElementById("submitOrderBtnText"),aBox=document.getElementById("orderStatusAlert");
+    sBtn.disabled=true; sTxt.textContent=t("orderSending");
+    const msg=`&#127775; <b>YANGI VIP BUYURTMA \u2014 RAQAM ATELIER</b> &#127775;\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n&#128241; <b>Tanlangan Raqam:</b> <code>${curChkNum}</code>\n&#128176; <b>Narxi:</b> <b>${curChkPrice}</b>\n&#127970; <b>Operator/Lot:</b> ${curChkOp}\n\n&#128100; <b>Xaridor:</b> ${esc(name)}\n&#128222; <b>Telefon:</b> <code>${esc(phone)}</code>\n&#128205; <b>Hudud:</b> ${esc(region)}\n&#9889; <b>Qabul qilish:</b> ${esc(format)}\n&#128179; <b>To'lov turi:</b> ${esc(payment)}\n${notes?`&#128221; <b>Izoh:</b> <i>${esc(notes)}</i>\n`:""}\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n&#128197; <i>Vaqti: ${new Date().toLocaleString("uz-UZ")}</i>\n&#128273; <i>Buyurtma kodi: #${refCode}</i>`.trim();
+    try {
+      const r=await fetch("https://api.telegram.org/bot"+TELEGRAM_CONFIG.botToken+"/sendMessage",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:TELEGRAM_CONFIG.chatId,text:msg,parse_mode:"HTML"})});
+      const d=await r.json();
+      if(d.ok){closeCheckoutModal();openReceiptModal(refCode,curChkNum,name);sBtn.disabled=false;sTxt.textContent=t("orderBtnDefault");}
+      else {
+        aBox.classList.remove("hidden");
+        if(d.description&&d.description.includes("chat not found")){
+          aBox.className="p-3 rounded-xl text-[12px] leading-relaxed bg-amber-50 border border-amber-200 text-amber-900";
+          aBox.innerHTML="<strong>Diqqat / Внимание:</strong> Botga kirib <b>/start</b> bosing!<br/><div class='mt-2 flex flex-wrap gap-2'><a href='https://t.me/"+TELEGRAM_CONFIG.botUsername+"?start=order_"+refCode+"' target='_blank' class='px-3 py-1.5 rounded-lg bg-amber-800 text-white font-bold text-[11px]'>1. Botga kirish</a><button type='button' onclick='retrySubmitOrder()' class='px-3 py-1.5 rounded-lg bg-amber-200 text-amber-900 font-bold text-[11px]'>2. Qayta yuborish</button></div>";
+        } else {
+          aBox.className="p-3 rounded-xl text-[12px] leading-relaxed bg-red-50 border border-red-200 text-red-900";
+          aBox.innerHTML="<strong>Xatolik:</strong> "+esc(d.description||"Ulanishda xatolik")+". <a href='https://t.me/"+TELEGRAM_CONFIG.botUsername+"' target='_blank' class='underline font-bold'>@"+TELEGRAM_CONFIG.botUsername+"</a>";
+        }
+        sBtn.disabled=false; sTxt.textContent=t("orderBtnDefault");
+      }
+    } catch(err) {
+      aBox.classList.remove("hidden");
+      aBox.className="p-3 rounded-xl text-[12px] leading-relaxed bg-amber-50 border border-amber-200 text-amber-900";
+      aBox.innerHTML="Internet ulanishi xatosi / Ошибка сети.<br/><a href='https://t.me/"+TELEGRAM_CONFIG.botUsername+"?text="+encodeURIComponent(msg)+"' target='_blank' class='mt-2 inline-block px-4 py-2 rounded-lg bg-accent text-white font-bold text-[11px] uppercase'>Telegram orqali jo'natish &rarr;</a>";
+      sBtn.disabled=false; sTxt.textContent=t("orderBtnDefault");
+    }
+  }
+  function retrySubmitOrder(){const f=document.getElementById("orderForm");if(f)f.requestSubmit();}
+  function openReceiptModal(code,number,name) {
+    document.getElementById("receiptOrderCode").textContent="#"+code;
+    document.getElementById("receiptNumber").textContent=number;
+    document.getElementById("receiptBuyer").textContent=name;
+    document.getElementById("receiptBotLink").href="https://t.me/"+TELEGRAM_CONFIG.botUsername;
+    applyLangToScope(document.getElementById("receiptModal"));
+    document.getElementById("receiptModal").classList.remove("opacity-0","pointer-events-none");
+  }
+  function closeReceiptModal(){document.getElementById("receiptModal").classList.add("opacity-0","pointer-events-none");}
+  function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[m]);}
+
+  function toggleFaq(id) {
+    const body=document.getElementById("faq-body-"+id),icon=document.getElementById("faq-icon-"+id);
+    if(!body||!icon)return;
+    const open=body.classList.contains("hidden");
+    body.classList.toggle("hidden",!open);
+    icon.style.transform=open?"rotate(180deg)":"rotate(0deg)";
+    if(open){const txt=currentLang==="ru"?body.dataset.ru:body.dataset.uz;if(txt)body.textContent=txt;}
+  }
+
+  let toastTimeout=null;
+  function showToast(msg) {
+    const t2=document.getElementById("toastNotification"),l=document.getElementById("toastMessage");
+    if(!t2||!l)return;
+    l.textContent=msg;
+    t2.classList.remove("opacity-0","pointer-events-none","translate-y-2");
+    t2.classList.add("opacity-100","translate-y-0");
+    clearTimeout(toastTimeout);
+    toastTimeout=setTimeout(()=>{t2.classList.remove("opacity-100","translate-y-0");t2.classList.add("opacity-0","pointer-events-none","translate-y-2");},2600);
+  }
+
+  ["numberDossierModal","checkoutModal","wishlistModal"].forEach(id=>{
+    document.getElementById(id).addEventListener("click",e=>{
+      if(e.target.id===id){
+        if(id==="numberDossierModal")closeNumberDossier();
+        if(id==="checkoutModal")closeCheckoutModal();
+        if(id==="wishlistModal")closeWishlistModal();
+      }
+    });
+  });
+
+  const phoneInput=document.getElementById("buyerPhone");
+  if(phoneInput){phoneInput.addEventListener("input",e=>{
+    let v=e.target.value.replace(/\D/g,'');
+    if(!v.startsWith("998"))v="998"+v;
+    v=v.substring(0,12);
+    let f="+998 ";
+    if(v.length>3)f+=v.substring(3,5);
+    if(v.length>5)f+=" "+v.substring(5,8);
+    if(v.length>8)f+=" "+v.substring(8,10);
+    if(v.length>10)f+=" "+v.substring(10,12);
+    e.target.value=f.trim();
+  });}
+
+  async function fetchInventory() {
+    try {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .eq('is_active', true)
+        .order('created_at', { ascending: false });
+      
+      if (error) throw error;
+      
+      INVENTORY = data.map(item => ({
+        id: item.id,
+        number: item.number,
+        operator: item.operator,
+        series: item.series,
+        category: item.category,
+        tier: item.tier,
+        raw: item.raw,
+        price: parseFloat(item.price),
+        priceUsd: parseFloat(item.price_usd),
+        desc_uz: item.desc_uz,
+        desc_ru: item.desc_ru,
+        isFeatured: item.is_featured,
+        imageUrl: item.image_url
+      }));
+    } catch(err) {
+      console.error('Failed to load inventory from Supabase', err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", async ()=>{
+    setLang(currentLang);
+    initHeroTyping();
+    await fetchInventory();
+    selectedNumberLot = INVENTORY[0] || null;
+    renderInventory();
+    updateWishlistBadges();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta content="mobile_tab" name="shell-type"/>
+  <title>+998 90 777 77 77 — Dossier va Xarid | RAQAM</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000a05",
+            "primary-container": "#14231b",
+            "primary-fixed": "#d5e7da",
+            "primary-fixed-dim": "#b9cbbe",
+            "secondary": "#725c22",
+            "secondary-container": "#fedf98",
+            "secondary-fixed": "#fedf98",
+            "secondary-fixed-dim": "#e1c37f",
+            "tertiary": "#0e0702",
+            "tertiary-container": "#281e15",
+            "surface": "#fcf9f2",
+            "surface-dim": "#dcdad3",
+            "surface-bright": "#fcf9f2",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3ec",
+            "surface-container": "#f0eee7",
+            "surface-container-high": "#ebe8e1",
+            "surface-container-highest": "#e5e2db",
+            "on-surface": "#1c1c18",
+            "on-surface-variant": "#434844",
+            "outline": "#737874",
+            "outline-variant": "#c3c8c2",
+            "error": "#ba1a1a"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fcf9f2;
+        color: #1c1c18;
+      }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: max(env(safe-area-inset-top, 0px), 16px); }
+    }
+    .tabular-numbers { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+
+<body class="font-body text-on-surface bg-surface min-h-screen flex flex-col antialiased selection:bg-secondary-fixed-dim selection:text-primary">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-40 bg-primary-container/95 backdrop-blur-xl border-b border-secondary-fixed-dim/20 shadow-[0_4px_24px_rgba(20,35,27,0.15)]">
+    <div class="max-w-4xl mx-auto h-16 px-4 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2 text-secondary-fixed hover:text-white transition-colors">
+        <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+        <span class="text-[12px] font-bold uppercase tracking-wider">Katalog</span>
+      </a>
+
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo.svg" alt="RAQAM" class="h-8 w-auto object-contain"/>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="https://t.me/raqamlaruz1bot" target="_blank" class="w-9 h-9 rounded-full bg-secondary text-primary flex items-center justify-center font-bold">
+          <span class="material-symbols-outlined text-[18px]">support_agent</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow pt-20 pb-24 max-w-xl mx-auto px-4 w-full">
+    
+    <!-- Status Top Banner -->
+    <div class="mb-4 p-3 bg-secondary-fixed-dim/25 border border-secondary-fixed-dim/50 rounded-xl flex items-center justify-between text-[11px] font-semibold text-secondary">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span>Eksklyuziv lot: Ushbu raqam faqat 1 nusxada mavjud</span>
+      </div>
+      <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-secondary text-primary">FAOL LOT</span>
+    </div>
+
+    <!-- Lot Main Hero Showcase -->
+    <section class="bg-primary text-surface-container-lowest p-6 rounded-3xl shadow-xl border border-secondary-fixed-dim/30 relative overflow-hidden mb-5">
+      <div class="absolute -top-16 -right-16 w-52 h-52 bg-secondary/15 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center justify-between mb-3">
+        <span id="pageTierBadge" class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest">
+          PREMIUM PRIVILEGED STATUS
+        </span>
+        <span id="pageOperatorBadge" class="text-[11px] text-surface-container-highest/80 uppercase font-bold tracking-wider">
+          Beeline Uzbekistan
+        </span>
+      </div>
+
+      <div class="text-center py-4 my-2">
+        <span class="text-[10px] font-bold text-secondary-fixed uppercase tracking-[0.25em] block mb-1">Davlat Arbobining Monolit Raqami</span>
+        <h1 id="pageNumberTitle" class="font-headline text-3xl sm:text-4xl text-secondary-fixed font-bold tracking-wider tabular-numbers">
+          +998 90 777 77 77
+        </h1>
+        <p id="pageDesc" class="text-[13px] text-surface-container-high/80 max-w-xs mx-auto mt-2 leading-relaxed">
+          O'zbekistonning eng nufuzli va tanilgan yettilik monolit seriyasi. Shaxsiy reyting va ishonchning eng oliy ifodasi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/10 text-[11px]">
+        <div class="bg-primary-container/80 p-2.5 rounded-xl">
+          <span class="text-surface-container-highest/60 block text-[9px] uppercase tracking-wider">Operator bazasi</span>
+          <span class="font-bold text-secondary-fixed">Rasmiy diler kafolati</span>
+        </div>
+        <div class="bg-primary-container/80 p-2.5 rounded-xl">
+          <span class="text-surface-container-highest/60 block text-[9px] uppercase tracking-wider">Yetkazish formati</span>
+          <span class="font-bold text-secondary-fixed">eSIM / Oltin Kuryer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Card -->
+    <section class="bg-surface-container-low p-5 rounded-2xl border border-surface-container-highest shadow-sm mb-5">
+      <div class="flex items-baseline justify-between">
+        <span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Aktivning Rasmiy Qiymati</span>
+        <span class="text-[11px] text-on-surface-variant">Bozor indeksi bo‘yicha</span>
+      </div>
+
+      <div class="flex items-baseline gap-2 mt-1">
+        <span id="pagePriceTag" class="font-headline text-2xl sm:text-3xl text-primary font-bold tracking-tight">2 500 000</span>
+        <span class="text-base text-secondary font-bold">so‘m</span>
+        <span id="pagePriceUsdTag" class="text-[12px] text-outline ml-auto font-mono">≈ $200 USD</span>
+      </div>
+
+      <div class="mt-3 p-3 bg-surface-container rounded-xl flex items-start gap-2.5 text-[12px]">
+        <span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">account_balance</span>
+        <div>
+          <span class="font-bold text-primary block">To‘liq Huquqiy To‘plam Bepul</span>
+          <span class="text-on-surface-variant text-[11px] leading-relaxed">
+            Notarial guvohnoma, operator bazasida nomingizga rasmiylashtirish narx ichiga to‘liq kiritilgan.
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-2 p-2.5 bg-secondary-fixed/20 rounded-xl flex items-center justify-between text-[11px]">
+        <span class="text-secondary font-medium">3 oyga foizsiz bo‘lib to‘lash:</span>
+        <span id="pageInstallment" class="font-bold text-secondary">833 000 so‘m / oy</span>
+      </div>
+    </section>
+
+    <!-- Primary Purchase Action Buttons -->
+    <section class="flex flex-col gap-2.5 mb-6">
+      <button onclick="openOrderModal()" class="w-full py-4 px-5 bg-primary hover:bg-primary-container text-secondary-fixed font-headline text-[15px] font-bold tracking-wider rounded-2xl shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.99]">
+        <span class="material-symbols-outlined text-[20px]">gavel</span>
+        <span>BAND QILISH VA RASMIYLASHTIRISH</span>
+      </button>
+
+      <a href="https://t.me/raqamlaruz1bot" target="_blank" class="w-full py-3.5 px-5 bg-surface-container hover:bg-surface-container-high text-primary font-bold text-[13px] rounded-2xl flex items-center justify-center gap-2 transition-colors border border-surface-container-highest">
+        <span class="material-symbols-outlined text-[18px] text-secondary">support_agent</span>
+        <span>Shaxsiy Konsyerj Bilan Bog‘lanish (Telegram)</span>
+      </a>
+
+      <div class="grid grid-cols-2 gap-2 mt-1">
+        <button onclick="togglePageFav()" id="favBtn" class="py-2.5 px-3 bg-surface-container hover:bg-surface-container-high text-on-surface text-[11px] font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 transition-colors">
+          <span class="material-symbols-outlined text-[17px] text-secondary">favorite</span>
+          <span id="favBtnLabel">Sevimlilarga Saqlash</span>
+        </button>
+
+        <button onclick="sharePage()" class="py-2.5 px-3 bg-surface-container hover:bg-surface-container-high text-on-surface text-[11px] font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 transition-colors">
+          <span class="material-symbols-outlined text-[17px] text-secondary">share</span>
+          <span>Dossier Havolasi</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Legal Guarantee -->
+    <section class="bg-surface-container-low p-5 rounded-2xl border border-surface-container-highest shadow-sm mb-5">
+      <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-surface-container-highest">
+        <span class="material-symbols-outlined text-secondary text-[24px]">history_edu</span>
+        <div>
+          <h2 class="font-headline text-base text-primary font-bold">Rasmiylashtirish Kafolati</h2>
+          <p class="text-[10px] text-secondary uppercase tracking-widest font-semibold">100% Qonuniy Huquq</p>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-[12px]">
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-secondary-fixed text-primary font-bold flex items-center justify-center shrink-0">1</span>
+          <div>
+            <span class="font-bold text-primary block">Shaxsni Tasdiqlash</span>
+            <span class="text-on-surface-variant">Passport yoki ID-karta (MyID) orqali xavfsiz identifikatsiya.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-secondary-fixed text-primary font-bold flex items-center justify-center shrink-0">2</span>
+          <div>
+            <span class="font-bold text-primary block">Operatorning Markaziy Bazasi</span>
+            <span class="text-on-surface-variant">Raqam bevosita operatorning rasmiy markaziy bazasida nomingizga o'tkaziladi.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-secondary-fixed text-primary font-bold flex items-center justify-center shrink-0">3</span>
+          <div>
+            <span class="font-bold text-primary block">15 Daqiqada eSIM yoki Oltin Kuryer</span>
+            <span class="text-on-surface-variant">QR-kod orqali bir zumda yuklab oling yoki maxsus qadoqda qabul qiling.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-surface-container rounded-xl flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+          <div>
+            <span class="font-headline text-[12px] text-primary font-bold block">ASLLIK SERTIFIKATI</span>
+            <span class="text-[9px] text-on-surface-variant uppercase font-mono">Himoya kodi: #RQ-777-VVIP</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary text-[24px]">fingerprint</span>
+      </div>
+    </section>
+
+    <!-- Numerology & Prestige Analysis -->
+    <section class="bg-primary text-on-primary p-5 rounded-2xl shadow-lg border border-secondary-fixed-dim/30 mb-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="material-symbols-outlined text-secondary-fixed text-[20px]">psychology_alt</span>
+        <span class="font-headline text-xs text-secondary-fixed tracking-wider uppercase font-semibold">Numerologiya va Nufuz Tahlili</span>
+      </div>
+
+      <p class="font-headline text-base text-surface italic mt-1 leading-relaxed">
+        "7 raqami — barqarorlik, nufuz, ruhiy yuksalish va cheksiz omad ramzi."
+      </p>
+
+      <p class="text-[12px] text-surface-container-highest/80 leading-relaxed mt-2">
+        Ushbu monolit yettilik seriyasi nufuzli biznes uchrashuvlarda va shaxsiy muloqotda so‘zsiz ishonch uyg‘otadi. Takrorlanuvchi raqamlar suhbatdosh xotirasida bir umrga muhrlanadi.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-white/10 text-center">
+        <div class="p-2 bg-primary-container rounded-xl">
+          <span class="font-headline text-[17px] text-secondary-fixed font-bold block">100%</span>
+          <span class="text-[9px] text-surface-container-highest/70 uppercase">Yodda Qolish</span>
+        </div>
+        <div class="p-2 bg-primary-container rounded-xl">
+          <span class="font-headline text-[17px] text-secondary-fixed font-bold block">AAA+</span>
+          <span class="text-[9px] text-surface-container-highest/70 uppercase">Investitsiya</span>
+        </div>
+        <div class="p-2 bg-primary-container rounded-xl">
+          <span class="font-headline text-[17px] text-secondary-fixed font-bold block">Yagona</span>
+          <span class="text-[9px] text-surface-container-highest/70 uppercase">Eksklyuzivlik</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Checkout Modal Container (Reused) -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-primary/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="checkoutModalSheet" class="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-surface rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl transform translate-y-full transition-transform duration-300 border border-secondary-fixed-dim/40">
+      
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary text-[22px]">gavel</span>
+          <div>
+            <h3 class="font-headline text-lg font-bold text-primary">Notarial Rasmiylashtirish</h3>
+            <span id="orderRefCode" class="text-[10px] text-secondary uppercase font-bold tracking-wider">Dossier: #RQ-77701</span>
+          </div>
+        </div>
+        <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form id="orderForm" onsubmit="handleDossierOrder(event)" class="space-y-3">
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">To‘liq Ism-sharifingiz *</label>
+          <input id="buyerName" type="text" required placeholder="Azizov Alisher Rustamovich" class="w-full p-3 rounded-xl bg-surface-container border border-surface-container-highest text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-secondary/40"/>
+        </div>
+
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Bog‘lanish Telefon Raqami *</label>
+          <input id="buyerPhone" type="tel" required placeholder="+998 90 123 45 67" class="w-full p-3 rounded-xl bg-surface-container border border-surface-container-highest text-primary text-[13px] font-medium outline-none focus:ring-2 focus:ring-secondary/40"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">Qabul qilish</label>
+            <select id="deliveryFormat" class="w-full p-2.5 rounded-xl bg-surface-container border border-surface-container-highest text-primary text-[12px]">
+              <option value="eSIM (15 daqiqa)">⚡ eSIM Tezkor</option>
+              <option value="Diplomatik Kuryer">📦 Diplomatik Kuryer</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mb-1">To'lov</label>
+            <select id="paymentMethod" class="w-full p-2.5 rounded-xl bg-surface-container border border-surface-container-highest text-primary text-[12px]">
+              <option value="Payme / Click">Payme / Click</option>
+              <option value="Uzum Bank">Uzum Bank</option>
+              <option value="Naqd / Konsyerj">Naqd pul</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="orderAlert" class="hidden p-3 rounded-xl text-[12px]"></div>
+
+        <button id="submitBtn" type="submit" class="w-full mt-3 py-3.5 rounded-xl bg-secondary text-primary font-headline font-bold text-[14px] uppercase tracking-wider hover:bg-secondary-fixed shadow transition-all flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[18px]">send</span>
+          <span id="submitBtnText">BUYURTMANI YUBORISH</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    const TG_CONFIG = {
+      botToken: "8972377880:AAHb92twEsLbXxFGqLxglV6Ja-FkWbl4Lv4",
+      chatId: "8510937645",
+      botUsername: "raqamlaruz1bot"
+    };
+
+    function openOrderModal() {
+      const modal = document.getElementById("checkoutModal");
+      const sheet = document.getElementById("checkoutModalSheet");
+      modal.classList.remove("opacity-0", "pointer-events-none");
+      sheet.classList.remove("translate-y-full");
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById("checkoutModal");
+      const sheet = document.getElementById("checkoutModalSheet");
+      modal.classList.add("opacity-0", "pointer-events-none");
+      sheet.classList.add("translate-y-full");
+    }
+
+    async function handleDossierOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById("buyerName").value.trim();
+      const phone = document.getElementById("buyerPhone").value.trim();
+      const format = document.getElementById("deliveryFormat").value;
+      const payment = document.getElementById("paymentMethod").value;
+      const number = document.getElementById("pageNumberTitle").textContent.trim();
+      const price = document.getElementById("pagePriceTag").textContent.trim() + " so‘m";
+
+      const submitBtn = document.getElementById("submitBtn");
+      const submitText = document.getElementById("submitBtnText");
+      const alertBox = document.getElementById("orderAlert");
+
+      submitBtn.disabled = true;
+      submitText.textContent = "Yuborilmoqda...";
+
+      const message = `
+🌟 <b>YANGI VIP DOSSIER BUYURTMA</b> 🌟
+━━━━━━━━━━━━━━━━━━━━━━━
+📱 <b>Tanlangan Raqam:</b> <code>${number}</code>
+💰 <b>Narxi:</b> <b>${price}</b>
+👤 <b>Xaridor:</b> ${name}
+📞 <b>Telefon:</b> <code>${phone}</code>
+⚡ <b>Format:</b> ${format}
+💳 <b>To'lov:</b> ${payment}
+━━━━━━━━━━━━━━━━━━━━━━━
+📅 <i>Vaqti: ${new Date().toLocaleString("uz-UZ")}</i>
+      `.trim();
+
+      try {
+        const resp = await fetch(`https://api.telegram.org/bot${TG_CONFIG.botToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: TG_CONFIG.chatId, text: message, parse_mode: "HTML" })
+        });
+        const data = await resp.json();
+
+        if (data.ok) {
+          alertBox.className = "p-3 rounded-xl text-[12px] bg-emerald-50 text-emerald-900 border border-emerald-200 block";
+          alertBox.innerHTML = "<b>Buyurtmangiz muvaffaqiyatli qabul qilindi!</b> Shaxsiy konsyerjimiz tez orada bog'lanadi.";
+          setTimeout(closeOrderModal, 2000);
+        } else {
+          alertBox.className = "p-3 rounded-xl text-[12px] bg-amber-50 text-amber-900 border border-amber-200 block";
+          alertBox.innerHTML = `
+            Bot xabar qabul qilishi uchun avval <a href="https://t.me/${TG_CONFIG.botUsername}" target="_blank" class="font-bold underline">@${TG_CONFIG.botUsername}</a> ga kirib /start tugmasini bosing.
+          `;
+        }
+      } catch (err) {
+        alertBox.className = "p-3 rounded-xl text-[12px] bg-amber-50 text-amber-900 border border-amber-200 block";
+        alertBox.innerHTML = `
+          <a href="https://t.me/${TG_CONFIG.botUsername}?text=${encodeURIComponent(message)}" target="_blank" class="font-bold underline">Telegram orqali jo'natish →</a>
+        `;
+      }
+      submitBtn.disabled = false;
+      submitText.textContent = "BUYURTMANI YUBORISH";
+    }
+
+    function togglePageFav() {
+      const btnLabel = document.getElementById("favBtnLabel");
+      if (btnLabel.textContent.includes("Saqlash")) {
+        btnLabel.textContent = "Saqlandi (★)";
+      } else {
+        btnLabel.textContent = "Sevimlilarga Saqlash";
+      }
+    }
+
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: window.location.href }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("Dossier havolasi buferga nusxalandi!");
+      }
+    }
+  </script>
+
+</body>
+</html>

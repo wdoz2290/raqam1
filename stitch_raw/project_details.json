@@ -1,0 +1,236 @@
+{
+  "id": 7,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"name\":\"projects/9615977406914474995\",\"title\":\"RAQAM Luxury Phone Boutique\",\"visibility\":\"PRIVATE\",\"createTime\":\"2026-09-20T03:19:02.143361Z\",\"updateTime\":\"2026-09-20T03:36:53.098200Z\",\"projectType\":\"TEXT_TO_UI_PRO\",\"thumbnailScreenshot\":{\"name\":\"projects/9615977406914474995/screens/0ab00ce6d6d5503ffb9ea7d44323f2cb8e9409d2a3f44e60e11bc8446701fffc/fileEntries/screenshot\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AEtjO1UdPZKB4PRcGKEtZgPQ6sDJO5t85wBV-9orLtKKaKbDJ5SAQf1uBMu42Y_7f1MSmDH8SAjlMsnJWpmyE56XmCDqaM7Q0e2ku0ZQUh0G6qXwNBFhobHEbbhA1GQIwYwnBJGf5e4uwfek2SDZUqqXSNpUKnR4u-7h_lGvfjdHa3Snqc9l7NQ-mjLSafHmzmrrTgcqGLYkf-beWkMHGKUtf22shKsitnV9OcoZXHwYOmprLIvRH2rtHvIeUPI\"},\"origin\":\"STITCH\",\"deviceType\":\"MOBILE\",\"designTheme\":{\"colorMode\":\"LIGHT\",\"font\":\"PLAYFAIR_DISPLAY\",\"roundness\":\"ROUND_FOUR\",\"customColor\":\"#14231b\",\"headlineFont\":\"PLAYFAIR_DISPLAY\",\"bodyFont\":\"PLUS_JAKARTA_SANS\",\"labelFont\":\"PLUS_JAKARTA_SANS\",\"namedColors\":{\"primary_fixed_dim\":\"#b9cbbe\",\"error_container\":\"#ffdad6\",\"inverse_on_surface\":\"#f3f0ea\",\"surface_variant\":\"#e5e2db\",\"on_tertiary_fixed\":\"#231a11\",\"on_error\":\"#ffffff\",\"on_secondary_fixed_variant\":\"#58440b\",\"background\":\"#fcf9f2\",\"on_tertiary_container\":\"#948578\",\"secondary_fixed_dim\":\"#e1c37f\",\"surface_container_low\":\"#f6f3ec\",\"on_background\":\"#1c1c18\",\"inverse_surface\":\"#31312c\",\"tertiary_container\":\"#281e15\",\"outline_variant\":\"#c3c8c2\",\"secondary\":\"#725c22\",\"tertiary_fixed\":\"#f2dfd1\",\"surface_container\":\"#f0eee7\",\"error\":\"#ba1a1a\",\"surface_container_highest\":\"#e5e2db\",\"on_secondary_container\":\"#786127\",\"secondary_container\":\"#fedf98\",\"surface_tint\":\"#526258\",\"inverse_primary\":\"#b9cbbe\",\"surface_bright\":\"#fcf9f2\",\"primary_container\":\"#14231b\",\"tertiary_fixed_dim\":\"#d5c3b5\",\"on_secondary\":\"#ffffff\",\"on_primary_fixed_variant\":\"#3b4a41\",\"surface\":\"#fcf9f2\",\"on_surface_variant\":\"#434844\",\"secondary_fixed\":\"#fedf98\",\"surface_container_lowest\":\"#ffffff\",\"outline\":\"#737874\",\"on_secondary_fixed\":\"#251a00\",\"surface_dim\":\"#dcdad3\",\"surface_container_high\":\"#ebe8e1\",\"on_error_container\":\"#93000a\",\"on_primary\":\"#ffffff\",\"on_surface\":\"#1c1c18\",\"on_primary_container\":\"#7a8b80\",\"primary_fixed\":\"#d5e7da\",\"on_primary_fixed\":\"#101f17\",\"tertiary\":\"#0e0702\",\"on_tertiary\":\"#ffffff\",\"on_tertiary_fixed_variant\":\"#51443a\",\"primary\":\"#000a05\"},\"designMd\":\"---\\nname: Quiet Luxury Bespoke Marketplace\\ncolors:\\n  surface: '#fcf9f2'\\n  surface-dim: '#dcdad3'\\n  surface-bright: '#fcf9f2'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f6f3ec'\\n  surface-container: '#f0eee7'\\n  surface-container-high: '#ebe8e1'\\n  surface-container-highest: '#e5e2db'\\n  on-surface: '#1c1c18'\\n  on-surface-variant: '#434844'\\n  inverse-surface: '#31312c'\\n  inverse-on-surface: '#f3f0ea'\\n  outline: '#737874'\\n  outline-variant: '#c3c8c2'\\n  surface-tint: '#526258'\\n  primary: '#000a05'\\n  on-primary: '#ffffff'\\n  primary-container: '#14231b'\\n  on-primary-container: '#7a8b80'\\n  inverse-primary: '#b9cbbe'\\n  secondary: '#725c22'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#fedf98'\\n  on-secondary-container: '#786127'\\n  tertiary: '#0e0702'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#281e15'\\n  on-tertiary-container: '#948578'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#d5e7da'\\n  primary-fixed-dim: '#b9cbbe'\\n  on-primary-fixed: '#101f17'\\n  on-primary-fixed-variant: '#3b4a41'\\n  secondary-fixed: '#fedf98'\\n  secondary-fixed-dim: '#e1c37f'\\n  on-secondary-fixed: '#251a00'\\n  on-secondary-fixed-variant: '#58440b'\\n  tertiary-fixed: '#f2dfd1'\\n  tertiary-fixed-dim: '#d5c3b5'\\n  on-tertiary-fixed: '#231a11'\\n  on-tertiary-fixed-variant: '#51443a'\\n  background: '#fcf9f2'\\n  on-background: '#1c1c18'\\n  surface-variant: '#e5e2db'\\ntypography:\\n  display-hero:\\n    fontFamily: Playfair Display\\n    fontSize: 56px\\n    fontWeight: '400'\\n    lineHeight: 64px\\n    letterSpacing: -0.02em\\n  display-hero-mobile:\\n    fontFamily: Playfair Display\\n    fontSize: 36px\\n    fontWeight: '400'\\n    lineHeight: 44px\\n    letterSpacing: -0.01em\\n  headline-xl:\\n    fontFamily: Playfair Display\\n    fontSize: 40px\\n    fontWeight: '500'\\n    lineHeight: 48px\\n    letterSpacing: -0.015em\\n  headline-lg:\\n    fontFamily: Playfair Display\\n    fontSize: 32px\\n    fontWeight: '500'\\n    lineHeight: 40px\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Playfair Display\\n    fontSize: 24px\\n    fontWeight: '600'\\n    lineHeight: 32px\\n    letterSpacing: 0em\\n  headline-sm:\\n    fontFamily: Playfair Display\\n    fontSize: 20px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n    letterSpacing: 0em\\n  body-xl:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 18px\\n    fontWeight: '400'\\n    lineHeight: 28px\\n    letterSpacing: -0.005em\\n  body-md:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 15px\\n    fontWeight: '400'\\n    lineHeight: 24px\\n    letterSpacing: 0em\\n  body-sm:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 13px\\n    fontWeight: '400'\\n    lineHeight: 20px\\n    letterSpacing: 0.01em\\n  number-display:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 32px\\n    fontWeight: '600'\\n    lineHeight: 36px\\n    letterSpacing: 0.06em\\n  number-display-sm:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 22px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n    letterSpacing: 0.04em\\n  label-caps:\\n    fontFamily: Plus Jakarta Sans\\n    fontSize: 11px\\n    fontWeight: '600'\\n    lineHeight: 16px\\n    letterSpacing: 0.14em\\n  label-editorial:\\n    fontFamily: Playfair Display\\n    fontSize: 14px\\n    fontWeight: '400'\\n    lineHeight: 18px\\n    letterSpacing: 0.08em\\nrounded:\\n  sm: 0.125rem\\n  DEFAULT: 0.25rem\\n  md: 0.375rem\\n  lg: 0.5rem\\n  xl: 0.75rem\\n  full: 9999px\\nspacing:\\n  gutter: 1.5rem\\n  margin: 2rem\\n  space-xs: 0.375rem\\n  space-sm: 0.75rem\\n  space-md: 1.25rem\\n  space-lg: 2rem\\n  space-xl: 3.5rem\\n---\\n\\n## Brand & Style\\n\\nThis design system delivers an aura of discreet opulence, heritage craftsmanship, and private wealth advisory tailored for an ultra-high-net-worth clientele acquiring prestige assets. The visual identity borrows the understated confidence of Swiss horology ateliers, Mayfair private banking houses, and Savile Row bespoke tailoring.\\n\\n### Visual Aesthetic & Philosophy\\n- **Restraint Over Ostentation:** Luxury is expressed through millimeter-precise proportions, expansive breathing room, hairline rules, and archival surfaces rather than overt saturation or gratuitous ornamentation.\\n- **Materiality & Tactility:** Surfaces mirror archival bond paper, warm parchment, brushed brass bezels, and deep British racing leather. Digital interfaces feel printed, engraved, or hand-set by an elite press.\\n- **Target Audience:** Sovereign individuals, family offices, C-suite executives, and connoisseurs who view telephone combinations as prestige digital real estate and status heirlooms.\\n\\n## Colors\\n\\nThe palette is strictly anchored in archival neutrals, forest depths, and antique metallurgy. Bright saturations, synthetic neons, cold blues, and pure blacks are entirely banned.\\n\\n### Core Swatches & Roles\\n- **Primary (`#14231B` Deep Forest Green):** The institutional core. Used for dominant surface contrasts, authoritative titles, key structural containers, and footers.\\n- **Deep Forest Sub-tier (`#0D1712` Dark Forest):** Used for elevated contrasts against primary backgrounds, extreme shadow depths, and midnight backdrops.\\n- **Secondary (`#B59A5A` Muted Antique Gold):** Reserved for prestige status badges, delicate hairline dividers, currency indicators, and bespoke verification hallmarks. A deeper variant (`#A8894A`) serves interactive states.\\n- **Tertiary (`#2B2118` Dark Brown / `#3A2A1E` Chocolate):** Warm, grounded typographic accents, secondary headers, and soft leather-like borders.\\n- **Base Neutral (`#FAF7F0` Warm Ivory):** The primary canvas background. Replaces sterile digital white with the warmth of handmade linen paper.\\n- **Container Neutral (`#F3EBDD` Cream):** Layered card surfaces, inset panels, and elevated editorial blocks.\\n- **Subtle Muted Tones (`#D8CCB8` Beige & `#9C9181` Soft Taupe):** Hairline borders, inactive track states, placeholder typography, and understated metadata.\\n\\n## Typography\\n\\nTypography establishes the cadence of an antique collector's catalogue.\\n\\n### Editorial Hierarchies\\n- **Playfair Display:** High-contrast editorial authority. Headlines employ natural casing or small-caps with generous breathing room. It is reserved for curatorial storytelling, asset classification titles (e.g., *Sovereign Tier*, *Maxsus*), and formal pricing headers.\\n- **Plus Jakarta Sans:** Crisp, geometric, yet softly human. Provides functional clarity for long-form advisory notes, operational instructions, metadata, and technical specifications.\\n- **Digits & Numerical Sequences:** Number combinations are rendered using `font-variant-numeric: tabular-nums` to guarantee mathematical cadence across listings. Phone numbers should be spaced with intentional typographic pauses (`+998 \u2022 77 \u2022 777 \u2022 77 \u2022 77`) to celebrate the pattern architecture.\\n\\n## Layout & Spacing\\n\\nThe layout is grounded in classical architectural proportion and an unhurried, spacious rhythm.\\n\\n### Grid & Layout Structure\\n- **Desktop (1200px+):** A 12-column grid constrained to a maximum width of `1380px`. Margins expand to `4rem` on ultra-wide screens to retain the feel of an open, leather-bound volume.\\n- **Tablet (768px - 1199px):** An 8-column grid with `1.5rem` gutters and `2.5rem` margins. Complex asset comparisons convert into split vertical folios.\\n- **Mobile (\\u003c 768px):** A 4-column layout with `1rem` gutters and `1.25rem` margins. Number cards prioritize single-column hero views over cramped grids.\\n\\n## Elevation & Depth\\n\\nElevation eschews synthetic drop shadows in favor of paper layering, fine-art matting, and micro-embossed hairline borders.\\n\\n### Depth Principles\\n- **Base Ground:** Warm Ivory (`#FAF7F0`) acts as the natural unprinted parchment base.\\n- **Inset / Matting:** Cream (`#F3EBDD`) layered over Ivory produces tonal depth without drop shadows.\\n- **Hairline Framing:** Depth is demarcated by a 1px border of `#B59A5A` at 25% opacity or `#D8CCB8` at 60% opacity.\\n- **Ambient Shadowing:** When floating dialogs or hero phones require lift, use an ultra-diffused shadow tinted with forest-umber: `0 24px 48px -12px rgba(20, 35, 27, 0.08), 0 4px 12px rgba(43, 33, 24, 0.04)`.\\n- **Specular Glass & Bevel Accents:** Modal glass overlays feature a `backdrop-filter: blur(16px)` paired with an inner top border of `1px solid rgba(255, 255, 255, 0.4)` and a bottom border of `1px solid rgba(181, 154, 90, 0.25)`.\\n\\n## Shapes\\n\\nThe geometry adheres strictly to Soft (`roundedness: 1`), reinforcing architectural precision and high-grade leather craftsmanship rather than casual consumer software.\\n\\n### Corner Radius Standards\\n- **Cards, Frames, and Containers:** `4px` (`0.25rem`). Imparts an impression of hand-cut archival stationery and tailored metal plating.\\n- **Badges, Pills, and Tags:** Full pill rounding (`9999px`) is permitted exclusively for high-status badges (e.g., `VIP`, `MAXSUS`) and search filter pills to emulate polished jewel hallmarks and private seal rings.\\n- **Buttons:** Subtly softened at `4px` for formal primary buttons; select secondary filter triggers use strict pill styling.\\n\\n## Components\\n\\n### Hero Smartphone Showcase Frame\\n- **Chassis & Bezel:** A bespoke physical representation of a flagship handheld, rendered with a hairline brushed antique gold bezel (`#B59A5A`, 1.5px width) and an inner chamfered edge (`#3A2A1E`).\\n- **Screen Simulation:** Deep Forest Green display background with ambient light reflections across the upper-right corner.\\n- **Dynamic Lock Screen:** The showcased telephone number is set in Playfair Display with gold foil gradient text rendering, paired with carrier branding (e.g., \\\"Ucell VIP Reserve\\\").\\n\\n### Editorial Category Cards (PREMIUM, VIP, MAXSUS)\\n- **Base & Border:** Cream background (`#F3EBDD`), 1px antique gold border (`#B59A5A` at 35% opacity), 4px corner radius.\\n- **Header:** Category designation set in `label-caps`, tracked at `0.18em` with a centered antique gold starburst or ornamental divider.\\n- **Typography:** Deep Forest Green (`#14231B`) body copy detailing rarity index, consecutive digit sequences, and investment status.\\n- **Hover Micro-interaction:** The hairline gold border shifts to 100% opacity with an inner glow of `inset 0 0 0 1px #B59A5A`.\\n\\n### Number Catalog Card\\n- **Layout:** Horizontal archival card on desktop, vertical docket on mobile.\\n- **Operator Mark:** Understated monochrome or muted-tint badges for Beeline, Ucell, Mobiuz, and Uztelecom, enclosed in a Soft Taupe hairline border.\\n- **The Asset (Number):** Rendered in `number-display`, using tabular alignment, tinted in Deep Forest Green with antique gold dot separators.\\n- **Pricing & Action:** Valuation stated in US Dollars or UZS with tabular numerals in `#B59A5A`. Accompanied by a bespoke button labeled \\\"Inquire Privately\\\" or \\\"Acquire\\\".\\n\\n### Search & Filter Pill Bars\\n- **Container:** Sandstone/cream inset pill track with an inner hairline shadow.\\n- **Active Filter:** Deep Forest Green fill, Warm Ivory typography, and a hairline gold badge indicator.\\n- **Digit Pattern Matcher:** Specialized input featuring slot masks (e.g., `*777-77-77`) with a mono-spaced layout and gold indicator caret.\\n\\n### Interactive Modal & Number Verification Dossier\\n- **Backdrop:** Semi-transparent Dark Forest (`#0D1712` at 70% opacity) with a 20px blur.\\n- **Modal Container:** Dual-tone dossier panel. Left panel provides provenance, ownership certificate preview, and operator transfer timeline; right panel renders a live high-fidelity smartphone receiving an incoming call from the selected number.\\n\\n### Navigation & Footer\\n- **Navbar:** Minimalist Warm Ivory header fixed at `72px` with a frosted backing blur, antique gold monogram emblem, navigation links in uppercase `Plus Jakarta Sans` (`12px`, letter spacing `0.12em`), and a \\\"Concierge Desk\\\" button.\\n- **Footer:** Immersive Deep Forest Green (`#14231B`) field featuring archival serif colophons, discreet compliance disclaimers, gold-embossed regulatory stamps, and customer advisory contact details.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#14231b\",\"overrideSecondaryColor\":\"#b59a5a\",\"overrideTertiaryColor\":\"#2b2118\",\"overrideNeutralColor\":\"#faf7f0\",\"spacingScale\":2,\"typography\":{\"display-hero\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"56px\",\"fontWeight\":\"400\",\"lineHeight\":\"64px\",\"letterSpacing\":\"-0.02em\"},\"body-xl\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"28px\",\"letterSpacing\":\"-0.005em\"},\"label-editorial\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"14px\",\"fontWeight\":\"400\",\"lineHeight\":\"18px\",\"letterSpacing\":\"0.08em\"},\"headline-lg\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"32px\",\"fontWeight\":\"500\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.01em\"},\"display-hero-mobile\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"36px\",\"fontWeight\":\"400\",\"lineHeight\":\"44px\",\"letterSpacing\":\"-0.01em\"},\"label-caps\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"11px\",\"fontWeight\":\"600\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.14em\"},\"body-md\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"15px\",\"fontWeight\":\"400\",\"lineHeight\":\"24px\",\"letterSpacing\":\"0em\"},\"body-sm\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"13px\",\"fontWeight\":\"400\",\"lineHeight\":\"20px\",\"letterSpacing\":\"0.01em\"},\"number-display\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"32px\",\"fontWeight\":\"600\",\"lineHeight\":\"36px\",\"letterSpacing\":\"0.06em\"},\"headline-sm\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"20px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\",\"letterSpacing\":\"0em\"},\"headline-md\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"24px\",\"fontWeight\":\"600\",\"lineHeight\":\"32px\",\"letterSpacing\":\"0em\"},\"number-display-sm\":{\"fontFamily\":\"Plus Jakarta Sans\",\"fontSize\":\"22px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\",\"letterSpacing\":\"0.04em\"},\"headline-xl\":{\"fontFamily\":\"Playfair Display\",\"fontSize\":\"40px\",\"fontWeight\":\"500\",\"lineHeight\":\"48px\",\"letterSpacing\":\"-0.015em\"}},\"spacing\":{\"space-sm\":\"0.75rem\",\"space-xl\":\"3.5rem\",\"margin\":\"2rem\",\"space-xs\":\"0.375rem\",\"space-md\":\"1.25rem\",\"space-lg\":\"2rem\",\"gutter\":\"1.5rem\"},\"headlineFontFamily\":\"Playfair Display\",\"bodyFontFamily\":\"Plus Jakarta Sans\",\"labelFontFamily\":\"Plus Jakarta Sans\"},\"screenInstances\":[{\"id\":\"910de6c143ee45e7bb6e91e4c1b41848\",\"sourceScreen\":\"projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848\",\"y\":5407,\"width\":390,\"height\":3622},{\"id\":\"a7d688f1b002498d9a78bb14766b237d\",\"sourceScreen\":\"projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d\",\"x\":1368,\"width\":390,\"height\":5151},{\"id\":\"assets_abf301d02ac24de4a4b386c4816ee308\",\"width\":960,\"height\":540,\"sourceAsset\":\"assets/abf301d02ac24de4a4b386c4816ee308\",\"type\":\"DESIGN_SYSTEM_INSTANCE\"},{\"id\":\"b448a3180fa2431f9576eb9f285042ee\",\"sourceScreen\":\"projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee\",\"x\":1822,\"width\":390,\"height\":884},{\"id\":\"d9506db4c18f4b3b834768ebcaef34a2\",\"sourceScreen\":\"projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2\",\"x\":1024,\"width\":280,\"height\":74}],\"metadata\":{\"userRole\":\"OWNER\"}}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "createTime": "2026-09-20T03:19:02.143361Z",
+      "designTheme": {
+        "bodyFont": "PLUS_JAKARTA_SANS",
+        "bodyFontFamily": "Plus Jakarta Sans",
+        "colorMode": "LIGHT",
+        "colorVariant": "FIDELITY",
+        "customColor": "#14231b",
+        "designMd": "---\nname: Quiet Luxury Bespoke Marketplace\ncolors:\n  surface: '#fcf9f2'\n  surface-dim: '#dcdad3'\n  surface-bright: '#fcf9f2'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f3ec'\n  surface-container: '#f0eee7'\n  surface-container-high: '#ebe8e1'\n  surface-container-highest: '#e5e2db'\n  on-surface: '#1c1c18'\n  on-surface-variant: '#434844'\n  inverse-surface: '#31312c'\n  inverse-on-surface: '#f3f0ea'\n  outline: '#737874'\n  outline-variant: '#c3c8c2'\n  surface-tint: '#526258'\n  primary: '#000a05'\n  on-primary: '#ffffff'\n  primary-container: '#14231b'\n  on-primary-container: '#7a8b80'\n  inverse-primary: '#b9cbbe'\n  secondary: '#725c22'\n  on-secondary: '#ffffff'\n  secondary-container: '#fedf98'\n  on-secondary-container: '#786127'\n  tertiary: '#0e0702'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#281e15'\n  on-tertiary-container: '#948578'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#d5e7da'\n  primary-fixed-dim: '#b9cbbe'\n  on-primary-fixed: '#101f17'\n  on-primary-fixed-variant: '#3b4a41'\n  secondary-fixed: '#fedf98'\n  secondary-fixed-dim: '#e1c37f'\n  on-secondary-fixed: '#251a00'\n  on-secondary-fixed-variant: '#58440b'\n  tertiary-fixed: '#f2dfd1'\n  tertiary-fixed-dim: '#d5c3b5'\n  on-tertiary-fixed: '#231a11'\n  on-tertiary-fixed-variant: '#51443a'\n  background: '#fcf9f2'\n  on-background: '#1c1c18'\n  surface-variant: '#e5e2db'\ntypography:\n  display-hero:\n    fontFamily: Playfair Display\n    fontSize: 56px\n    fontWeight: '400'\n    lineHeight: 64px\n    letterSpacing: -0.02em\n  display-hero-mobile:\n    fontFamily: Playfair Display\n    fontSize: 36px\n    fontWeight: '400'\n    lineHeight: 44px\n    letterSpacing: -0.01em\n  headline-xl:\n    fontFamily: Playfair Display\n    fontSize: 40px\n    fontWeight: '500'\n    lineHeight: 48px\n    letterSpacing: -0.015em\n  headline-lg:\n    fontFamily: Playfair Display\n    fontSize: 32px\n    fontWeight: '500'\n    lineHeight: 40px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Playfair Display\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: 0em\n  headline-sm:\n    fontFamily: Playfair Display\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: 0em\n  body-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n    letterSpacing: -0.005em\n  body-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n    letterSpacing: 0em\n  body-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 13px\n    fontWeight: '400'\n    lineHeight: 20px\n    letterSpacing: 0.01em\n  number-display:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 36px\n    letterSpacing: 0.06em\n  number-display-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 22px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: 0.04em\n  label-caps:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 11px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.14em\n  label-editorial:\n    fontFamily: Playfair Display\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 18px\n    letterSpacing: 0.08em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  gutter: 1.5rem\n  margin: 2rem\n  space-xs: 0.375rem\n  space-sm: 0.75rem\n  space-md: 1.25rem\n  space-lg: 2rem\n  space-xl: 3.5rem\n---\n\n## Brand & Style\n\nThis design system delivers an aura of discreet opulence, heritage craftsmanship, and private wealth advisory tailored for an ultra-high-net-worth clientele acquiring prestige assets. The visual identity borrows the understated confidence of Swiss horology ateliers, Mayfair private banking houses, and Savile Row bespoke tailoring.\n\n### Visual Aesthetic & Philosophy\n- **Restraint Over Ostentation:** Luxury is expressed through millimeter-precise proportions, expansive breathing room, hairline rules, and archival surfaces rather than overt saturation or gratuitous ornamentation.\n- **Materiality & Tactility:** Surfaces mirror archival bond paper, warm parchment, brushed brass bezels, and deep British racing leather. Digital interfaces feel printed, engraved, or hand-set by an elite press.\n- **Target Audience:** Sovereign individuals, family offices, C-suite executives, and connoisseurs who view telephone combinations as prestige digital real estate and status heirlooms.\n\n## Colors\n\nThe palette is strictly anchored in archival neutrals, forest depths, and antique metallurgy. Bright saturations, synthetic neons, cold blues, and pure blacks are entirely banned.\n\n### Core Swatches & Roles\n- **Primary (`#14231B` Deep Forest Green):** The institutional core. Used for dominant surface contrasts, authoritative titles, key structural containers, and footers.\n- **Deep Forest Sub-tier (`#0D1712` Dark Forest):** Used for elevated contrasts against primary backgrounds, extreme shadow depths, and midnight backdrops.\n- **Secondary (`#B59A5A` Muted Antique Gold):** Reserved for prestige status badges, delicate hairline dividers, currency indicators, and bespoke verification hallmarks. A deeper variant (`#A8894A`) serves interactive states.\n- **Tertiary (`#2B2118` Dark Brown / `#3A2A1E` Chocolate):** Warm, grounded typographic accents, secondary headers, and soft leather-like borders.\n- **Base Neutral (`#FAF7F0` Warm Ivory):** The primary canvas background. Replaces sterile digital white with the warmth of handmade linen paper.\n- **Container Neutral (`#F3EBDD` Cream):** Layered card surfaces, inset panels, and elevated editorial blocks.\n- **Subtle Muted Tones (`#D8CCB8` Beige & `#9C9181` Soft Taupe):** Hairline borders, inactive track states, placeholder typography, and understated metadata.\n\n## Typography\n\nTypography establishes the cadence of an antique collector's catalogue.\n\n### Editorial Hierarchies\n- **Playfair Display:** High-contrast editorial authority. Headlines employ natural casing or small-caps with generous breathing room. It is reserved for curatorial storytelling, asset classification titles (e.g., *Sovereign Tier*, *Maxsus*), and formal pricing headers.\n- **Plus Jakarta Sans:** Crisp, geometric, yet softly human. Provides functional clarity for long-form advisory notes, operational instructions, metadata, and technical specifications.\n- **Digits & Numerical Sequences:** Number combinations are rendered using `font-variant-numeric: tabular-nums` to guarantee mathematical cadence across listings. Phone numbers should be spaced with intentional typographic pauses (`+998 \u2022 77 \u2022 777 \u2022 77 \u2022 77`) to celebrate the pattern architecture.\n\n## Layout & Spacing\n\nThe layout is grounded in classical architectural proportion and an unhurried, spacious rhythm.\n\n### Grid & Layout Structure\n- **Desktop (1200px+):** A 12-column grid constrained to a maximum width of `1380px`. Margins expand to `4rem` on ultra-wide screens to retain the feel of an open, leather-bound volume.\n- **Tablet (768px - 1199px):** An 8-column grid with `1.5rem` gutters and `2.5rem` margins. Complex asset comparisons convert into split vertical folios.\n- **Mobile (< 768px):** A 4-column layout with `1rem` gutters and `1.25rem` margins. Number cards prioritize single-column hero views over cramped grids.\n\n## Elevation & Depth\n\nElevation eschews synthetic drop shadows in favor of paper layering, fine-art matting, and micro-embossed hairline borders.\n\n### Depth Principles\n- **Base Ground:** Warm Ivory (`#FAF7F0`) acts as the natural unprinted parchment base.\n- **Inset / Matting:** Cream (`#F3EBDD`) layered over Ivory produces tonal depth without drop shadows.\n- **Hairline Framing:** Depth is demarcated by a 1px border of `#B59A5A` at 25% opacity or `#D8CCB8` at 60% opacity.\n- **Ambient Shadowing:** When floating dialogs or hero phones require lift, use an ultra-diffused shadow tinted with forest-umber: `0 24px 48px -12px rgba(20, 35, 27, 0.08), 0 4px 12px rgba(43, 33, 24, 0.04)`.\n- **Specular Glass & Bevel Accents:** Modal glass overlays feature a `backdrop-filter: blur(16px)` paired with an inner top border of `1px solid rgba(255, 255, 255, 0.4)` and a bottom border of `1px solid rgba(181, 154, 90, 0.25)`.\n\n## Shapes\n\nThe geometry adheres strictly to Soft (`roundedness: 1`), reinforcing architectural precision and high-grade leather craftsmanship rather than casual consumer software.\n\n### Corner Radius Standards\n- **Cards, Frames, and Containers:** `4px` (`0.25rem`). Imparts an impression of hand-cut archival stationery and tailored metal plating.\n- **Badges, Pills, and Tags:** Full pill rounding (`9999px`) is permitted exclusively for high-status badges (e.g., `VIP`, `MAXSUS`) and search filter pills to emulate polished jewel hallmarks and private seal rings.\n- **Buttons:** Subtly softened at `4px` for formal primary buttons; select secondary filter triggers use strict pill styling.\n\n## Components\n\n### Hero Smartphone Showcase Frame\n- **Chassis & Bezel:** A bespoke physical representation of a flagship handheld, rendered with a hairline brushed antique gold bezel (`#B59A5A`, 1.5px width) and an inner chamfered edge (`#3A2A1E`).\n- **Screen Simulation:** Deep Forest Green display background with ambient light reflections across the upper-right corner.\n- **Dynamic Lock Screen:** The showcased telephone number is set in Playfair Display with gold foil gradient text rendering, paired with carrier branding (e.g., \"Ucell VIP Reserve\").\n\n### Editorial Category Cards (PREMIUM, VIP, MAXSUS)\n- **Base & Border:** Cream background (`#F3EBDD`), 1px antique gold border (`#B59A5A` at 35% opacity), 4px corner radius.\n- **Header:** Category designation set in `label-caps`, tracked at `0.18em` with a centered antique gold starburst or ornamental divider.\n- **Typography:** Deep Forest Green (`#14231B`) body copy detailing rarity index, consecutive digit sequences, and investment status.\n- **Hover Micro-interaction:** The hairline gold border shifts to 100% opacity with an inner glow of `inset 0 0 0 1px #B59A5A`.\n\n### Number Catalog Card\n- **Layout:** Horizontal archival card on desktop, vertical docket on mobile.\n- **Operator Mark:** Understated monochrome or muted-tint badges for Beeline, Ucell, Mobiuz, and Uztelecom, enclosed in a Soft Taupe hairline border.\n- **The Asset (Number):** Rendered in `number-display`, using tabular alignment, tinted in Deep Forest Green with antique gold dot separators.\n- **Pricing & Action:** Valuation stated in US Dollars or UZS with tabular numerals in `#B59A5A`. Accompanied by a bespoke button labeled \"Inquire Privately\" or \"Acquire\".\n\n### Search & Filter Pill Bars\n- **Container:** Sandstone/cream inset pill track with an inner hairline shadow.\n- **Active Filter:** Deep Forest Green fill, Warm Ivory typography, and a hairline gold badge indicator.\n- **Digit Pattern Matcher:** Specialized input featuring slot masks (e.g., `*777-77-77`) with a mono-spaced layout and gold indicator caret.\n\n### Interactive Modal & Number Verification Dossier\n- **Backdrop:** Semi-transparent Dark Forest (`#0D1712` at 70% opacity) with a 20px blur.\n- **Modal Container:** Dual-tone dossier panel. Left panel provides provenance, ownership certificate preview, and operator transfer timeline; right panel renders a live high-fidelity smartphone receiving an incoming call from the selected number.\n\n### Navigation & Footer\n- **Navbar:** Minimalist Warm Ivory header fixed at `72px` with a frosted backing blur, antique gold monogram emblem, navigation links in uppercase `Plus Jakarta Sans` (`12px`, letter spacing `0.12em`), and a \"Concierge Desk\" button.\n- **Footer:** Immersive Deep Forest Green (`#14231B`) field featuring archival serif colophons, discreet compliance disclaimers, gold-embossed regulatory stamps, and customer advisory contact details.",
+        "font": "PLAYFAIR_DISPLAY",
+        "headlineFont": "PLAYFAIR_DISPLAY",
+        "headlineFontFamily": "Playfair Display",
+        "labelFont": "PLUS_JAKARTA_SANS",
+        "labelFontFamily": "Plus Jakarta Sans",
+        "namedColors": {
+          "background": "#fcf9f2",
+          "error": "#ba1a1a",
+          "error_container": "#ffdad6",
+          "inverse_on_surface": "#f3f0ea",
+          "inverse_primary": "#b9cbbe",
+          "inverse_surface": "#31312c",
+          "on_background": "#1c1c18",
+          "on_error": "#ffffff",
+          "on_error_container": "#93000a",
+          "on_primary": "#ffffff",
+          "on_primary_container": "#7a8b80",
+          "on_primary_fixed": "#101f17",
+          "on_primary_fixed_variant": "#3b4a41",
+          "on_secondary": "#ffffff",
+          "on_secondary_container": "#786127",
+          "on_secondary_fixed": "#251a00",
+          "on_secondary_fixed_variant": "#58440b",
+          "on_surface": "#1c1c18",
+          "on_surface_variant": "#434844",
+          "on_tertiary": "#ffffff",
+          "on_tertiary_container": "#948578",
+          "on_tertiary_fixed": "#231a11",
+          "on_tertiary_fixed_variant": "#51443a",
+          "outline": "#737874",
+          "outline_variant": "#c3c8c2",
+          "primary": "#000a05",
+          "primary_container": "#14231b",
+          "primary_fixed": "#d5e7da",
+          "primary_fixed_dim": "#b9cbbe",
+          "secondary": "#725c22",
+          "secondary_container": "#fedf98",
+          "secondary_fixed": "#fedf98",
+          "secondary_fixed_dim": "#e1c37f",
+          "surface": "#fcf9f2",
+          "surface_bright": "#fcf9f2",
+          "surface_container": "#f0eee7",
+          "surface_container_high": "#ebe8e1",
+          "surface_container_highest": "#e5e2db",
+          "surface_container_low": "#f6f3ec",
+          "surface_container_lowest": "#ffffff",
+          "surface_dim": "#dcdad3",
+          "surface_tint": "#526258",
+          "surface_variant": "#e5e2db",
+          "tertiary": "#0e0702",
+          "tertiary_container": "#281e15",
+          "tertiary_fixed": "#f2dfd1",
+          "tertiary_fixed_dim": "#d5c3b5"
+        },
+        "overrideNeutralColor": "#faf7f0",
+        "overridePrimaryColor": "#14231b",
+        "overrideSecondaryColor": "#b59a5a",
+        "overrideTertiaryColor": "#2b2118",
+        "roundness": "ROUND_FOUR",
+        "spacing": {
+          "gutter": "1.5rem",
+          "margin": "2rem",
+          "space-lg": "2rem",
+          "space-md": "1.25rem",
+          "space-sm": "0.75rem",
+          "space-xl": "3.5rem",
+          "space-xs": "0.375rem"
+        },
+        "spacingScale": 2,
+        "typography": {
+          "body-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "letterSpacing": "0em",
+            "lineHeight": "24px"
+          },
+          "body-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "13px",
+            "fontWeight": "400",
+            "letterSpacing": "0.01em",
+            "lineHeight": "20px"
+          },
+          "body-xl": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "18px",
+            "fontWeight": "400",
+            "letterSpacing": "-0.005em",
+            "lineHeight": "28px"
+          },
+          "display-hero": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "56px",
+            "fontWeight": "400",
+            "letterSpacing": "-0.02em",
+            "lineHeight": "64px"
+          },
+          "display-hero-mobile": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "36px",
+            "fontWeight": "400",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "44px"
+          },
+          "headline-lg": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "letterSpacing": "-0.01em",
+            "lineHeight": "40px"
+          },
+          "headline-md": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "24px",
+            "fontWeight": "600",
+            "letterSpacing": "0em",
+            "lineHeight": "32px"
+          },
+          "headline-sm": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "20px",
+            "fontWeight": "600",
+            "letterSpacing": "0em",
+            "lineHeight": "28px"
+          },
+          "headline-xl": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "40px",
+            "fontWeight": "500",
+            "letterSpacing": "-0.015em",
+            "lineHeight": "48px"
+          },
+          "label-caps": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "11px",
+            "fontWeight": "600",
+            "letterSpacing": "0.14em",
+            "lineHeight": "16px"
+          },
+          "label-editorial": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "letterSpacing": "0.08em",
+            "lineHeight": "18px"
+          },
+          "number-display": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "32px",
+            "fontWeight": "600",
+            "letterSpacing": "0.06em",
+            "lineHeight": "36px"
+          },
+          "number-display-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "22px",
+            "fontWeight": "600",
+            "letterSpacing": "0.04em",
+            "lineHeight": "28px"
+          }
+        }
+      },
+      "deviceType": "MOBILE",
+      "metadata": {
+        "userRole": "OWNER"
+      },
+      "name": "projects/9615977406914474995",
+      "origin": "STITCH",
+      "projectType": "TEXT_TO_UI_PRO",
+      "screenInstances": [
+        {
+          "height": 3622,
+          "id": "910de6c143ee45e7bb6e91e4c1b41848",
+          "sourceScreen": "projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848",
+          "width": 390,
+          "y": 5407
+        },
+        {
+          "height": 5151,
+          "id": "a7d688f1b002498d9a78bb14766b237d",
+          "sourceScreen": "projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d",
+          "width": 390,
+          "x": 1368
+        },
+        {
+          "height": 540,
+          "id": "assets_abf301d02ac24de4a4b386c4816ee308",
+          "sourceAsset": "assets/abf301d02ac24de4a4b386c4816ee308",
+          "type": "DESIGN_SYSTEM_INSTANCE",
+          "width": 960
+        },
+        {
+          "height": 884,
+          "id": "b448a3180fa2431f9576eb9f285042ee",
+          "sourceScreen": "projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee",
+          "width": 390,
+          "x": 1822
+        },
+        {
+          "height": 74,
+          "id": "d9506db4c18f4b3b834768ebcaef34a2",
+          "sourceScreen": "projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2",
+          "width": 280,
+          "x": 1024
+        }
+      ],
+      "thumbnailScreenshot": {
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UdPZKB4PRcGKEtZgPQ6sDJO5t85wBV-9orLtKKaKbDJ5SAQf1uBMu42Y_7f1MSmDH8SAjlMsnJWpmyE56XmCDqaM7Q0e2ku0ZQUh0G6qXwNBFhobHEbbhA1GQIwYwnBJGf5e4uwfek2SDZUqqXSNpUKnR4u-7h_lGvfjdHa3Snqc9l7NQ-mjLSafHmzmrrTgcqGLYkf-beWkMHGKUtf22shKsitnV9OcoZXHwYOmprLIvRH2rtHvIeUPI",
+        "name": "projects/9615977406914474995/screens/0ab00ce6d6d5503ffb9ea7d44323f2cb8e9409d2a3f44e60e11bc8446701fffc/fileEntries/screenshot"
+      },
+      "title": "RAQAM Luxury Phone Boutique",
+      "updateTime": "2026-09-20T03:36:53.098200Z",
+      "visibility": "PRIVATE"
+    }
+  }
+}

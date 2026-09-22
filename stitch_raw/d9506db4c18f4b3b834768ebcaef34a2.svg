@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" fill="none">
+  <!-- Minimalist Heritage Monogram & Wordmark for RAQAM -->
+  <g transform="translate(10, 8)">
+    <!-- Antique Gold Emblem -->
+    <rect x="0.5" y="0.5" width="53" height="53" rx="2" stroke="#B59A5A" stroke-width="1.2" fill="none" opacity="0.85"/>
+    <rect x="5.5" y="5.5" width="43" height="43" rx="1" stroke="#B59A5A" stroke-width="0.6" stroke-dasharray="2 2" fill="none" opacity="0.6"/>
+    <!-- Stylized Roman 'R' with dial notch -->
+    <path d="M19 16H29.5C34.2 16 37 18.8 37 22.8C37 26.8 34.2 29.5 29.5 29.5H19V16Z" stroke="#B59A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M19 16V38" stroke="#B59A5A" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M28.5 29.5L37.5 38" stroke="#B59A5A" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="26.5" cy="27" r="1.5" fill="#B59A5A"/>
+  </g>
+  <!-- Wordmark 'RAQAM' in high-contrast luxury serif styling -->
+  <text x="78" y="38" fill="#F3EBDD" font-family="'Playfair Display', 'Cormorant Garamond', serif" font-size="28" font-weight="600" letter-spacing="0.28em">RAQAM</text>
+  <text x="80" y="52" fill="#B59A5A" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="400" letter-spacing="0.38em">BESPOKE TELEPHONE NUMBERS</text>
+</svg>

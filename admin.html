@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - RAQAM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- ========== LOGIN VIEW ========== -->
+  <div id="loginView" class="min-h-screen flex flex-col items-center justify-center bg-slate-900 p-4">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold text-slate-900">RAQAM Admin</h1>
+        <p class="text-slate-500 text-sm mt-2">Boshqaruv paneliga kirish uchun ma'lumotlarni kiriting</p>
+      </div>
+      <form id="loginForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Email</label>
+          <input type="email" id="emailInput" required class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Parol</label>
+          <input type="password" id="passwordInput" required class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+        </div>
+        <div id="loginError" class="hidden text-red-500 text-sm font-medium"></div>
+        <button type="submit" id="loginBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg transition-colors">Tizimga kirish</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== ADMIN DASHBOARD VIEW ========== -->
+  <div id="dashboardView" class="hidden min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-900 text-white flex flex-col hidden md:flex shrink-0">
+      <div class="h-16 flex items-center px-6 border-b border-slate-800 font-bold text-xl tracking-wider">RAQAM</div>
+      <nav class="flex-1 p-4 space-y-2">
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600/20 text-blue-400 font-medium">
+          <span class="material-symbols-outlined">dashboard</span> Dashboard
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-300 font-medium transition-colors">
+          <span class="material-symbols-outlined">inventory_2</span> Mahsulotlar
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-300 font-medium transition-colors">
+          <span class="material-symbols-outlined">category</span> Kategoriyalar
+        </a>
+      </nav>
+      <div class="p-4 border-t border-slate-800">
+        <button onclick="logoutAdmin()" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg hover:bg-red-500/10 text-red-400 font-medium transition-colors">
+          <span class="material-symbols-outlined">logout</span> Chiqish
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+      <!-- Header -->
+      <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0">
+        <h2 class="text-xl font-bold text-slate-800">Mahsulotlarni Boshqarish</h2>
+        <div class="flex items-center gap-4">
+          <span class="text-sm font-medium text-slate-500" id="adminEmailDisplay">admin@raqam.uz</span>
+          <button onclick="logoutAdmin()" class="md:hidden p-2 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">logout</span></button>
+        </div>
+      </header>
+
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-auto p-6">
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><span class="material-symbols-outlined">format_list_numbered</span></div>
+            <div><p class="text-sm font-medium text-slate-500">Jami Mahsulotlar</p><h3 id="statTotal" class="text-2xl font-bold text-slate-800">0</h3></div>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><span class="material-symbols-outlined">visibility</span></div>
+            <div><p class="text-sm font-medium text-slate-500">Faol Mahsulotlar</p><h3 id="statActive" class="text-2xl font-bold text-slate-800">0</h3></div>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center"><span class="material-symbols-outlined">visibility_off</span></div>
+            <div><p class="text-sm font-medium text-slate-500">Yashirilgan</p><h3 id="statHidden" class="text-2xl font-bold text-slate-800">0</h3></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="relative flex-1 sm:w-64">
+              <span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-[20px]">search</span>
+              <input type="text" id="searchInput" placeholder="Raqamni qidirish..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm">
+            </div>
+            <select id="filterCategory" class="px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none text-sm bg-white">
+              <option value="all">Barcha kategoriyalar</option>
+              <option value="VIP">VIP</option>
+              <option value="Premium">Premium</option>
+              <option value="Maxsus">Maxsus</option>
+            </select>
+          </div>
+          <button onclick="openProductModal()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors">
+            <span class="material-symbols-outlined text-[20px]">add</span> Yangi qo'shish
+          </button>
+        </div>
+
+        <!-- Table -->
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm whitespace-nowrap">
+              <thead class="bg-slate-50 border-b border-slate-200 text-slate-500">
+                <tr>
+                  <th class="px-6 py-3 font-semibold">Raqam</th>
+                  <th class="px-6 py-3 font-semibold">Narx</th>
+                  <th class="px-6 py-3 font-semibold">Kategoriya / Operator</th>
+                  <th class="px-6 py-3 font-semibold">Holat</th>
+                  <th class="px-6 py-3 font-semibold text-right">Amallar</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody" class="divide-y divide-slate-100">
+                <!-- Data injected by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div id="tableLoading" class="p-8 text-center text-slate-400 hidden">
+            <span class="material-symbols-outlined animate-spin text-3xl mb-2">progress_activity</span>
+            <p>Yuklanmoqda...</p>
+          </div>
+          <div id="tableEmpty" class="p-8 text-center text-slate-500 hidden">
+            <p>Mahsulotlar topilmadi.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ========== PRODUCT MODAL ========== -->
+  <div id="productModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between shrink-0">
+        <h3 id="modalTitle" class="text-lg font-bold text-slate-800">Yangi mahsulot</h3>
+        <button onclick="closeProductModal()" class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1">
+        <form id="productForm" class="space-y-5">
+          <input type="hidden" id="productId">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Raqam (Format: +998 90 777 77 77)*</label>
+              <input type="text" id="pNumber" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Tozalangan Raqam (Format: 907777777)*</label>
+              <input type="text" id="pRaw" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Narx (so'm)*</label>
+              <input type="number" id="pPrice" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Narx (USD)*</label>
+              <input type="number" id="pPriceUsd" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Operator*</label>
+              <select id="pOperator" class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                <option value="Beeline">Beeline</option>
+                <option value="Ucell">Ucell</option>
+                <option value="Mobiuz">Mobiuz</option>
+                <option value="Uztelecom">Uztelecom</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Kategoriya*</label>
+              <select id="pCategory" class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+                <option value="VIP">VIP</option>
+                <option value="Premium">Premium</option>
+                <option value="Maxsus">Maxsus</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Seriya (masalan: 90 Seriya)*</label>
+              <input type="text" id="pSeries" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Daraja (masalan: Super VIP)*</label>
+              <input type="text" id="pTier" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Tavsif (UZ)*</label>
+              <textarea id="pDescUz" rows="3" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500"></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1">Tavsif (RU)*</label>
+              <textarea id="pDescRu" rows="3" required class="w-full px-3 py-2 rounded-lg border border-slate-300 outline-none focus:border-blue-500"></textarea>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="pIsActive" checked class="w-4 h-4 text-blue-600 rounded border-slate-300">
+              <span class="text-sm font-medium text-slate-700">Saytda ko'rsatish (Faol)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="pIsFeatured" class="w-4 h-4 text-blue-600 rounded border-slate-300">
+              <span class="text-sm font-medium text-slate-700">Tavsiya etilgan (Featured)</span>
+            </label>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-1">Rasm (Ixtiyoriy - Sertifikat / Surat)</label>
+            <input type="file" id="pImage" accept="image/*" class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            <p id="uploadStatus" class="text-xs mt-1 text-slate-500"></p>
+            <input type="hidden" id="pImageUrl">
+          </div>
+        </form>
+      </div>
+      <div class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex items-center justify-end gap-3 shrink-0">
+        <button onclick="closeProductModal()" class="px-4 py-2 font-medium text-slate-600 hover:bg-slate-200 rounded-lg transition-colors">Bekor qilish</button>
+        <button onclick="saveProduct()" id="saveBtn" class="px-4 py-2 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center gap-2">Saqlash</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TOAST ========== -->
+  <div id="adminToast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-800 text-white px-4 py-3 rounded-xl shadow-lg font-medium text-sm flex items-center gap-3">
+    <span class="material-symbols-outlined text-emerald-400" id="toastIcon">check_circle</span>
+    <span id="toastMsg">Muvaffaqiyatli</span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

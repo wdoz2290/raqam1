@@ -1,0 +1,76 @@
+{
+  "id": 6,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"screens\":[{\"name\":\"projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d\",\"title\":\"RAQAM \u2014 Eksklyuziv Telefon Raqamlari\",\"screenshot\":{\"name\":\"projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d/fileEntries/screenshot\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AEtjO1Xry0fOVxG6GS0-L7IA6yS_Pz3PbVc6wdRVMtETqWGDupsCJUWsEWSsfjPLhBp1PwIH6lscYvk18eUO2AewfJHkI3qw2-pqSzspw1Oc3e44dfEj5p-VCAv8qWCAvqdAD-3mORs0XgRUUPi5lyUCtpgaIOJGUS1anOqWDwiWOVxNJO8NpqHiq2anxypzXKO_IzIzJi-z-pLtGYeoFgPg4kltCuT1JrYpYVEVT-MYcdAOjecZPp2JnLXyfg\"},\"htmlCode\":{\"name\":\"projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d/fileEntries/html\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxYTE5NTdjMDgwNDVhZGNiMzg4MGQ5NDk3EgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"780\",\"height\":\"10394\",\"deviceType\":\"MOBILE\"},{\"name\":\"projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848\",\"title\":\"+998 90 777 77 77 \u2014 Dossier va Xarid | RAQAM\",\"screenshot\":{\"name\":\"projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848/fileEntries/screenshot\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AEtjO1VeAjpQxQj8IbghBZ60MksxYDn2CpDRSk-9zJHMLzSz36q4N-DziGR_uLMhUz5blI4MdFyZl1xDx7w2BvRYkI22TbjPpB7QC73-UhEZwFl2Sy_PvB7WnPy3_xjev16QDkEeakIXx3liVDZVY9-XlL4_gYyr2WjcSEX6G9G8-991EiJScF8cOBT0eCHmlH9OlsaFuWfdJMi-2Efyksf2DhKNSDalFSX_vcrFDBisHrJcXbuvZPRqHVFfEwc\"},\"htmlCode\":{\"name\":\"projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848/fileEntries/html\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxYzQ1MTE2YjkwNDRmNmNhZTY1MDBiNWZlEgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"780\",\"height\":\"7246\",\"deviceType\":\"MOBILE\"},{\"name\":\"projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee\",\"title\":\"RAQAM Luxury VIP Phone Number Marketplace\",\"screenshot\":{},\"htmlCode\":{\"name\":\"projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee/fileEntries/html\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxZDc1YWZmZTcwMjNiYzM4NWM3M2FkNDk5EgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"390\",\"height\":\"884\",\"deviceType\":\"MOBILE\"},{\"name\":\"projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2\",\"title\":\"RAQAM Bespoke Luxury Logo\",\"screenshot\":{\"name\":\"projects/9615977406914474995/screens/0ab00ce6d6d5503ffb9ea7d44323f2cb8e9409d2a3f44e60e11bc8446701fffc/fileEntries/screenshot\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AEtjO1UdPZKB4PRcGKEtZgPQ6sDJO5t85wBV-9orLtKKaKbDJ5SAQf1uBMu42Y_7f1MSmDH8SAjlMsnJWpmyE56XmCDqaM7Q0e2ku0ZQUh0G6qXwNBFhobHEbbhA1GQIwYwnBJGf5e4uwfek2SDZUqqXSNpUKnR4u-7h_lGvfjdHa3Snqc9l7NQ-mjLSafHmzmrrTgcqGLYkf-beWkMHGKUtf22shKsitnV9OcoZXHwYOmprLIvRH2rtHvIeUPI\"},\"htmlCode\":{\"name\":\"projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2/fileEntries/html\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxOWEzZjQ4ZDkwNDRmNmNhZTY1MDBiNWZlEgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086\",\"mimeType\":\"image/svg+xml\"},\"width\":\"280\",\"height\":\"80\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "screens": [
+        {
+          "deviceType": "MOBILE",
+          "height": "10394",
+          "htmlCode": {
+            "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxYTE5NTdjMDgwNDVhZGNiMzg4MGQ5NDk3EgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086",
+            "mimeType": "text/html",
+            "name": "projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d/fileEntries/html"
+          },
+          "name": "projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d",
+          "screenshot": {
+            "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1Xry0fOVxG6GS0-L7IA6yS_Pz3PbVc6wdRVMtETqWGDupsCJUWsEWSsfjPLhBp1PwIH6lscYvk18eUO2AewfJHkI3qw2-pqSzspw1Oc3e44dfEj5p-VCAv8qWCAvqdAD-3mORs0XgRUUPi5lyUCtpgaIOJGUS1anOqWDwiWOVxNJO8NpqHiq2anxypzXKO_IzIzJi-z-pLtGYeoFgPg4kltCuT1JrYpYVEVT-MYcdAOjecZPp2JnLXyfg",
+            "name": "projects/9615977406914474995/screens/a7d688f1b002498d9a78bb14766b237d/fileEntries/screenshot"
+          },
+          "title": "RAQAM \u2014 Eksklyuziv Telefon Raqamlari",
+          "width": "780"
+        },
+        {
+          "deviceType": "MOBILE",
+          "height": "7246",
+          "htmlCode": {
+            "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxYzQ1MTE2YjkwNDRmNmNhZTY1MDBiNWZlEgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086",
+            "mimeType": "text/html",
+            "name": "projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848/fileEntries/html"
+          },
+          "name": "projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848",
+          "screenshot": {
+            "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VeAjpQxQj8IbghBZ60MksxYDn2CpDRSk-9zJHMLzSz36q4N-DziGR_uLMhUz5blI4MdFyZl1xDx7w2BvRYkI22TbjPpB7QC73-UhEZwFl2Sy_PvB7WnPy3_xjev16QDkEeakIXx3liVDZVY9-XlL4_gYyr2WjcSEX6G9G8-991EiJScF8cOBT0eCHmlH9OlsaFuWfdJMi-2Efyksf2DhKNSDalFSX_vcrFDBisHrJcXbuvZPRqHVFfEwc",
+            "name": "projects/9615977406914474995/screens/910de6c143ee45e7bb6e91e4c1b41848/fileEntries/screenshot"
+          },
+          "title": "+998 90 777 77 77 \u2014 Dossier va Xarid | RAQAM",
+          "width": "780"
+        },
+        {
+          "deviceType": "MOBILE",
+          "height": "884",
+          "htmlCode": {
+            "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxZDc1YWZmZTcwMjNiYzM4NWM3M2FkNDk5EgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086",
+            "mimeType": "text/html",
+            "name": "projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee/fileEntries/html"
+          },
+          "name": "projects/9615977406914474995/screens/b448a3180fa2431f9576eb9f285042ee",
+          "screenshot": {},
+          "title": "RAQAM Luxury VIP Phone Number Marketplace",
+          "width": "390"
+        },
+        {
+          "height": "80",
+          "htmlCode": {
+            "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YmUxOWEzZjQ4ZDkwNDRmNmNhZTY1MDBiNWZlEgsSBxDyg6Wj_gIYAZIBIwoKcHJvamVjdF9pZBIVQhM5NjE1OTc3NDA2OTE0NDc0OTk1&filename=&opi=89354086",
+            "mimeType": "image/svg+xml",
+            "name": "projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2/fileEntries/html"
+          },
+          "name": "projects/9615977406914474995/screens/d9506db4c18f4b3b834768ebcaef34a2",
+          "screenshot": {
+            "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UdPZKB4PRcGKEtZgPQ6sDJO5t85wBV-9orLtKKaKbDJ5SAQf1uBMu42Y_7f1MSmDH8SAjlMsnJWpmyE56XmCDqaM7Q0e2ku0ZQUh0G6qXwNBFhobHEbbhA1GQIwYwnBJGf5e4uwfek2SDZUqqXSNpUKnR4u-7h_lGvfjdHa3Snqc9l7NQ-mjLSafHmzmrrTgcqGLYkf-beWkMHGKUtf22shKsitnV9OcoZXHwYOmprLIvRH2rtHvIeUPI",
+            "name": "projects/9615977406914474995/screens/0ab00ce6d6d5503ffb9ea7d44323f2cb8e9409d2a3f44e60e11bc8446701fffc/fileEntries/screenshot"
+          },
+          "title": "RAQAM Bespoke Luxury Logo",
+          "width": "280"
+        }
+      ]
+    }
+  }
+}

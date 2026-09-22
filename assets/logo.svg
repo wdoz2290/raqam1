@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" fill="none">
+  <!-- Minimalist Luxury Monogram & Wordmark in Deep Navy & Sapphire for RAQAM -->
+  <g transform="translate(10, 8)">
+    <!-- Deep Navy & Sapphire Emblem -->
+    <rect x="0.5" y="0.5" width="53" height="53" rx="4" stroke="#1E3A8A" stroke-width="1.5" fill="#EFF6FF" opacity="0.9"/>
+    <rect x="5.5" y="5.5" width="43" height="43" rx="2" stroke="#2563EB" stroke-width="0.75" stroke-dasharray="2 2" fill="none" opacity="0.7"/>
+    <!-- Stylized Roman 'R' with dial notch -->
+    <path d="M19 16H29.5C34.2 16 37 18.8 37 22.8C37 26.8 34.2 29.5 29.5 29.5H19V16Z" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M19 16V38" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+    <path d="M28.5 29.5L37.5 38" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="26.5" cy="27" r="1.8" fill="#2563EB"/>
+  </g>
+  <!-- Wordmark 'RAQAM' in Deep Navy -->
+  <text x="78" y="38" fill="#0F172A" font-family="'Playfair Display', serif" font-size="28" font-weight="700" letter-spacing="0.28em">RAQAM</text>
+  <text x="80" y="52" fill="#2563EB" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="600" letter-spacing="0.38em">LUXURY PHONE BOUTIQUE</text>
+</svg>
